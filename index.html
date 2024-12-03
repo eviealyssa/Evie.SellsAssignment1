@@ -1,1 +1,68 @@
 <!-- Conatins 2 videos and a welcome message -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- link to the stylesheet -->
+    <link rel="stylesheet" href="style.css" type= "text/css">
+
+    <!-- setting up project -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evie Sells - UCLan Shop</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="topNavBar">
+                <!-- adding in logo -->
+                <div class="logo">
+                    <img src="resources/images/logo.svg" alt="UCLan logo" height="65rem" >
+                </div>
+
+                <!-- adding in hamburg menu icon for mobile users -->
+                <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40px"></a>
+
+                <!-- links for page navigation -->
+                <li id="navLinks">
+                    <a href="index.html" class="activePage">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="cart.html" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
+                </li>
+
+                <!-- cart menu icon for desktop / tablet -->
+                <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <footer>
+
+    </footer>
+
+
+
+    <script>
+        // Open / Close hamburger navigation function
+        function openHamburgerNav()
+        {
+            // get navLink and set as linksNav
+            var linksNav = document.getElementById("navLinks");
+            // If nav shown, hide
+            if (linksNav.style.display === "inline-table") {
+                linksNav.style.display = "none";
+            } 
+            // If nav hidden, show
+            else {
+                linksNav.style.display = "inline-table";
+            }
+        }
+
+    </script>
+</body>
+</html>

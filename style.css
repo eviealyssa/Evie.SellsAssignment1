@@ -1,0 +1,128 @@
+/* style sheet */
+
+/* applied to everything */
+* {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* css for navigation bar */
+header {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    background-color: #919CAD; /* Silver from colour palette */
+}
+
+.logo {
+    padding-left: 10px;
+    padding-right: 25px;
+    float: left;
+    height: 15%;
+}
+
+.topNavBar a.activePage {
+    text-decoration: underline;
+}
+
+.topNavBar {
+    background-color: #919CAD;
+    overflow: hidden;
+    position: relative;
+}
+  
+.topNavBar a {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    padding: 14px 16px 0.9em;
+    display: block;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 480;
+}
+  
+.topNavBar a:hover {
+    text-decoration: underline;
+}
+  
+.topNavBar a.splitNav {
+    float: right;
+    padding-top: 1%; 
+}
+
+
+body {
+    margin: 0;
+}
+
+/* css for navigation bar - mobile version */
+@media screen and (max-width: 768px) {
+    .topNavBar a#cartIcon {
+        display: none;
+    }
+
+    .topNavBar #navLinks {
+        display: none;
+        width: 100%;
+        font-size: 0.8em;
+        background-color: rgb(52, 81, 108, 0.3);
+    }
+
+    .topNavBar a.mobileMenuIcon {
+        display: inline;
+    }
+
+    .topNavBar a#cartText {
+        display: inline-table;
+    }
+}
+
+   /* css for navigation bar - tablet version */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .topNavBar a {
+        float: inline-start;
+    }
+
+    .topNavBar a#cartIcon {
+        display: inline;
+        padding-top: 1%; 
+    }
+
+    .topNavBar #navLinks {
+        display: inline-block;
+    }
+
+    .topNavBar a.mobileMenuIcon {
+        display: none;
+    }
+
+    .topNavBar a#cartText {
+        display: none;
+    }
+}
+
+
+  /* css for navigation bar - desktop version */
+@media screen and (min-width: 1025px) {
+    .topNavBar a {
+        float: inline-start;
+    }
+
+    .topNavBar a#cartIcon {
+        display: inline;
+        padding-top: 1%; 
+    }
+
+    .topNavBar #navLinks {
+        display: inline-block;
+    }
+
+    .topNavBar a.mobileMenuIcon {
+        display: none;
+    }
+
+    .topNavBar a#cartText {
+        display: none;
+    }
+    
+}
