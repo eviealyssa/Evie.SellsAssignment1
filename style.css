@@ -1,6 +1,6 @@
 /* style sheet */
 
-/* applied to everything */
+/* css applied to everything / all screens */
 * {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -50,13 +50,104 @@ header {
     padding-top: 1%; 
 }
 
-
+/* css for body */
 body {
     margin: 0;
 }
 
-/* css for navigation bar - mobile version */
+.welcomeToSU {
+    text-align: center;
+    color: #34516C;    
+}
+
+.welcomeVideoMp4 {
+    width: 250%;
+    float: inline-start;
+}
+
+.welcomeVideoYT {
+    width: 140%;
+    float: inline-start;
+}
+
+.homeSection1 {  
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1%; 
+    border-radius: 2em;
+    border:3px solid #34516C;
+    height: auto;
+    background-color: rgb(52, 81, 108, 0.5);  /* primary grey set at 50% transparany */
+    box-shadow: 5px 10px #cbcaca;
+}
+
+.homeSection1Video {
+    flex: 60%;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.homeSection1Text {
+    flex: 40%;
+    padding: 1em;
+}
+
+.homeSection2 {  
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1%; 
+    border-radius: 2em;
+    border: 3px solid #34516C;
+    box-shadow: 5px 10px #cbcaca;
+}
+
+.homeSection2Text {
+    flex: 40%;
+    background-color:  rgb(87, 122, 155, 0.5);  /* slate set at 50% transparany */
+    padding: 1em;
+}
+
+.homeSection2Video {
+    flex: 60%;
+    background-color:  rgb(87, 122, 155, 0.5);  /* slate set at 50% transparany */
+    padding: 1em;
+}
+
+.breakPoint {
+    margin: 2%;
+}
+
+/* css for footer */
+footer {
+    display: grid;
+    gap: 1px 3px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #34516C;
+    color: #C7CBDA;
+    text-align: left;
+}
+
+#emailAddress {
+    color: #C7CBDA;
+}
+
+.iconsFooter {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.socialMediaIcons a {
+    text-decoration: none;
+} 
+
+
+
+/* css for mobile version */
 @media screen and (max-width: 768px) {
+    /* css for navigation */
     .topNavBar a#cartIcon {
         display: none;
     }
@@ -75,10 +166,55 @@ body {
     .topNavBar a#cartText {
         display: inline-table;
     }
+
+
+    /* css for body */
+    .welcomeToSU {
+        font-size: 1em;
+    }
+
+    .homeSection1 {
+        flex-direction: column;
+    }
+
+    .homeSection2 {
+        flex-direction: column;
+    }
+
+
+    /* css for footer */
+    .contactInfo {
+        margin-left: 5%;
+        margin-right: 2%;
+        text-decoration: none;
+        grid-column: 1;
+    }
+    
+    .assignmentDetails {
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-column: 2;
+    }
+    
+    .FindSU {
+        margin-right: 2%;
+        margin-left: 5%;
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .socialMediaIcons {
+        display: inline;
+        margin: 2%;
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
 }
 
-   /* css for navigation bar - tablet version */
+   /* css for tablet version */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
+    /* css for navigation */
     .topNavBar a {
         float: inline-start;
     }
@@ -99,11 +235,35 @@ body {
     .topNavBar a#cartText {
         display: none;
     }
+
+
+    /* css for body */
+    .welcomeToSU {
+        font-size: 1.5em;
+    }
+
+
+    /* css for footer */
+    .contactInfo {
+        margin-left: 5%;
+        margin-right: 2%;
+        text-decoration: none;
+        grid-column: 1;
+    }
+        
+    .FindSU {
+        margin-right: 2%;
+        margin-left: 5%;
+        grid-column: 3;
+    }
+    
 }
 
 
-  /* css for navigation bar - desktop version */
+
+  /* css for desktop version */
 @media screen and (min-width: 1025px) {
+    /* css for navigation */
     .topNavBar a {
         float: inline-start;
     }
@@ -125,4 +285,32 @@ body {
         display: none;
     }
     
+    /* css for body */
+    .welcomeToSU {
+        font-size: 2em;
+    }
+
+
+    /* css for footer */
+    .contactInfo {
+        margin-left: 5%;
+        margin-right: 2%;
+        text-decoration: none;
+        grid-column: 1;
+    }
+    
+    #emailAddress {
+        color: #C7CBDA;
+    }
+    
+    .FindSU {
+        margin-right: 2%;
+        margin-left: 5%;
+        grid-column: 3;
+    }
+    
+    .socialMediaIcons {
+        display: inline;
+        grid-column: 4;
+    }
 }
