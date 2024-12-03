@@ -1,0 +1,186 @@
+<!-- Conatins 2 videos and a welcome message -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- link to the stylesheet -->
+    <link rel="stylesheet" href="productStyle.css" type= "text/css">
+
+    <!-- embed products array into file -->
+    <script src="./resources/product-array.js"></script>
+
+    <!-- setting up project -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evie Sells - UCLan Shop</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- navigation bar -->
+            <div class="topNavBar">
+                <!-- adding in logo -->
+                <div class="logo">
+                    <img src="resources/images/logo.svg" alt="UCLan logo" height="65rem" >
+                </div>
+
+                <!-- adding in hamburg menu icon for mobile users -->
+                <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40px"></a>
+
+                <!-- links for page navigation -->
+                <li id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="products.html" class="activePage">Products</a>
+                    <a href="cart.html" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
+                </li>
+
+                <!-- cart menu icon for desktop / tablet -->
+                <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
+            </div>
+        </nav>
+
+    </header>
+
+<!-- Main -->
+ <!-- product card template -->
+    <div id="productContainer">
+        <div class="productCard">
+            <img class="productImage" src='' alt="Product Image" width="50%">
+            <h1 class="productName">name</h1>
+            <h3 class="productPrice">price</h3>
+            <p class="productDescription">description</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+        
+
+ 
+    <div class="breakPoint"></div>
+
+    <div id="hoodyContainer">
+        <!-- <div class="productCard">
+            <img class="productImage" src='' alt="Product Image" width="50%">
+            <h1 class="productName">name</h1>
+            <h3 class="productPrice">price</h3>
+            <p class="productDescription">description</p>
+            <button>Add to Cart</button>
+        </div> -->
+    </div>
+
+<!-- Footer -->
+    <footer>
+        <div class="contactInfo">
+            <h2>Contact Info:</h2>
+            <p>Name: Evie Sells</p>
+            <p>Email: <a id="emailAddress" href="mailto:EASells@uclan.ac.uk">EASells@uclan.ac.uk</a></p>
+            <p>Reg.No: 21255921</p>
+        </div>
+
+        <div class="assignmentDetails">
+            <h2>Details:</h2>
+            <p>CO1707: Web Technologies</p>
+            <p>Assignment 1: Web Application</p>
+        </div>
+
+        <div class="FindSU">
+            <h2>Find the SU:</h2>
+            <p>University of Central Lancashire Students' Union,</p>
+            <p>Fylde Road, Preston. PR1 7BY</p>
+        </div>
+
+        <div class="socialMediaIcons">
+            <h2>Stay in touch with the SU!</h2>
+
+            <div class="iconsFooter">
+                <a href="https://www.facebook.com/uclanstudentsunion/">
+                    <img src='resources/images/social media icons/facebook-social-media-icon.svg' alt="Facebook icon" height="40">
+                </a>
+    
+                <a href="https://www.tiktok.com/@uclansu">
+                    <img src='resources/images/social media icons/tiktok-social-media-icon.svg' alt="TikTok icon" height="40">
+                </a>
+    
+                <a href="https://www.instagram.com/uclansu/">
+                    <img src='resources/images/social media icons/instagram-social-media-icon.svg' alt="Instagram icon" height="40">
+                </a>
+    
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2FUCLanSU">
+                    <img src='resources/images/social media icons/x-social-media-black-icon.svg' alt="X icon" height="40">
+                </a>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+<!-- script - JS -->
+    <script>
+        // Open / Close hamburger navigation function
+        function openHamburgerNav()
+        {
+            // get navLink and set as linksNav
+            var linksNav = document.getElementById("navLinks");
+            // If nav shown, hide
+            if (linksNav.style.display === "inline-table") {
+                linksNav.style.display = "none";
+            } 
+            // If nav hidden, show
+            else {
+                linksNav.style.display = "inline-table";
+            }
+        }
+
+        // function addProductsToPage(productType, productContainer)
+        // {
+        //     const productList = document.getElementById(productContainer);
+        //     const product = document.querySelector(".productCard");
+
+        //     for (i=0; i < productType.length; ++i)
+        //     {
+        //         let productCopy = product.cloneNode(true); //may need to be var instead of let
+        //         productList.appendChild(productCopy);
+        //         var productID = "ID" + i;
+        //         productCopy.id = productID;
+        //         productCopy.querySelector('.productName').innerHTML = productType[i][0];
+        //         productCopy.querySelector('.productDescription').innerHTML = productType[i][1];
+        //         productCopy.querySelector('.productPrice').innerHTML = productType[i][3];
+        //         productCopy.querySelector('.productImage').src = "resources/" + productType[i][4];
+        //     }
+
+        //     //hide the orginal/template product card
+        //     // product.style.display = 'none';
+
+        // }
+
+        
+
+        // addProductsToPage(tshirts, 'tshirtContainer');
+
+        // addProductsToPage(hoodies, 'hoodyContainer');
+
+        //populate page with products (tshirts)
+        const productList = document.getElementById('productContainer');
+        const product = document.querySelector(".productCard");
+
+        for (i=0; i < tshirts.length; ++i)
+        {
+            let productCopy = product.cloneNode(true); //may need to be var instead of let
+            productList.appendChild(productCopy);
+            var productID = "ID" + i;
+            productCopy.id = productID;
+            productCopy.querySelector('.productName').innerHTML = tshirts[i][0];
+            productCopy.querySelector('.productDescription').innerHTML = tshirts[i][1];
+            productCopy.querySelector('.productPrice').innerHTML = tshirts[i][3];
+            productCopy.querySelector('.productImage').src = "resources/" + tshirts[i][4];
+        }
+
+        //hide the orginal/template product card
+        product.style.display = 'none';
+
+
+
+    </script>
+</body>
+</html>
