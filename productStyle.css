@@ -60,27 +60,27 @@ body {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     border: solid #34516C;
     border-radius: 25px;
-    max-width: 300px;
+    max-width: 250px;
     margin: 0.7em;
     padding: 0.5em;
     text-align: center;
     font-family: arial;
   }
   
-  .productPrice {
+.productPrice {
     color: grey;
     font-size: 1.2em;
-  }
+}
 
-  .productDescription{
+.productDescription{
     font-size: 1em;
-  }
+}
 
-  .productName{
+.productName{
     font-size: 1.3em;
-  }
-  
-  .productCard button {
+}
+
+.productCard button {
     border: solid #34516C;
     border-radius: 16px;
     outline: 0;
@@ -91,24 +91,38 @@ body {
     cursor: pointer;
     width: 100%;
     font-size: 1em;
-  }
-  
-  .productCard button:hover {
-    opacity: 0.7;
-  }
+}
 
-  #productContainer {
+.productCard button:hover {
+    opacity: 0.7;
+}
+
+#tshirtContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
+
+#hoodyContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: none;
+}
+
+#jumperContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: none;
+}
 
 
 
 
-
-
-
+h1 {
+    text-align: center;
+}
 
 .breakPoint {
     margin: 2%;
@@ -200,6 +214,7 @@ footer {
     }
     
 }
+
 
    /* css for tablet version */
 @media screen and (max-width: 1024px) and (min-width: 769px) {

@@ -44,30 +44,30 @@
     </header>
 
 <!-- Main -->
- <!-- product card template -->
-    <div id="productContainer">
+    <h1>Tshirts</h1>
+    <!-- product card template & tshirt container-->
+    <div id="tshirtContainer">
         <div class="productCard">
             <img class="productImage" src='' alt="Product Image" width="50%">
             <h1 class="productName">name</h1>
             <h3 class="productPrice">price</h3>
             <p class="productDescription">description</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
         </div>
     </div>
-        
-
  
     <div class="breakPoint"></div>
 
-    <div id="hoodyContainer">
-        <!-- <div class="productCard">
-            <img class="productImage" src='' alt="Product Image" width="50%">
-            <h1 class="productName">name</h1>
-            <h3 class="productPrice">price</h3>
-            <p class="productDescription">description</p>
-            <button>Add to Cart</button>
-        </div> -->
-    </div>
+    <h1>Hoodies</h1>
+
+    <div id="hoodyContainer"></div>
+
+    <div class="breakPoint"></div>
+
+    <h1>Jumpers</h1>
+
+    <div id="jumperContainer"></div>
+
 
 <!-- Footer -->
     <footer>
@@ -132,52 +132,75 @@
             }
         }
 
-        // function addProductsToPage(productType, productContainer)
-        // {
-        //     const productList = document.getElementById(productContainer);
-        //     const product = document.querySelector(".productCard");
 
-        //     for (i=0; i < productType.length; ++i)
-        //     {
-        //         let productCopy = product.cloneNode(true); //may need to be var instead of let
-        //         productList.appendChild(productCopy);
-        //         var productID = "ID" + i;
-        //         productCopy.id = productID;
-        //         productCopy.querySelector('.productName').innerHTML = productType[i][0];
-        //         productCopy.querySelector('.productDescription').innerHTML = productType[i][1];
-        //         productCopy.querySelector('.productPrice').innerHTML = productType[i][3];
-        //         productCopy.querySelector('.productImage').src = "resources/" + productType[i][4];
-        //     }
-
-        //     //hide the orginal/template product card
-        //     // product.style.display = 'none';
-
-        // }
-
-        
-
-        // addProductsToPage(tshirts, 'tshirtContainer');
-
-        // addProductsToPage(hoodies, 'hoodyContainer');
-
-        //populate page with products (tshirts)
-        const productList = document.getElementById('productContainer');
-        const product = document.querySelector(".productCard");
-
-        for (i=0; i < tshirts.length; ++i)
+        function addProductsToPage(productType, productArray, productContainer)
         {
-            let productCopy = product.cloneNode(true); //may need to be var instead of let
-            productList.appendChild(productCopy);
-            var productID = "ID" + i;
-            productCopy.id = productID;
-            productCopy.querySelector('.productName').innerHTML = tshirts[i][0];
-            productCopy.querySelector('.productDescription').innerHTML = tshirts[i][1];
-            productCopy.querySelector('.productPrice').innerHTML = tshirts[i][3];
-            productCopy.querySelector('.productImage').src = "resources/" + tshirts[i][4];
+            const productList = document.getElementById(productContainer);
+            const product = document.querySelector(".productCard");
+
+            for (i=0; i < productArray.length; ++i)
+            {
+                let productCopy = product.cloneNode(true); //may need to be var instead of let
+                productList.appendChild(productCopy);
+                var productID = productType + "ID" + i;
+                productCopy.id = productID;
+                productCopy.querySelector('.productName').innerHTML = productArray[i][0];
+                productCopy.querySelector('.productDescription').innerHTML = productArray[i][1];
+                productCopy.querySelector('.productPrice').innerHTML = productArray[i][3];
+                productCopy.querySelector('.productImage').src = "resources/" + productArray[i][4];
+                // productCopy.querySelector('productID') = productID;
+            }
         }
 
+        
+        addProductsToPage('tshirts',tshirts, 'tshirtContainer');
+
+        addProductsToPage('hoodies', hoodies, 'hoodyContainer');
+
+        addProductsToPage('jumpers', jumpers, 'jumperContainer');
+
+        //hide the orginal/template product card in each section
+        document.querySelector(".productCard").style.display = "none";
+
+
+
+        function addToCart(elm)
+        {
+            //gets the parent (productCard) of the button
+            var parent = elm.parentNode;
+            // gets the ID of the selected productCard
+            var idProduct = parent.id;
+
+            //What I want to store for each item ???
+            //ID, quantity, Name, Description, Price, Image 
+
+
+
+            sessionStorage.setItem("cartList", idProduct)
+            console.log("get item = ", sessionStorage.getItem("cartList"));
+        
+
+        }
+
+
+        //populate page with products (tshirts)
+        // const productList = document.getElementById('productContainer');
+        // const product = document.querySelector(".productCard");
+
+        // for (i=0; i < tshirts.length; ++i)
+        // {
+        //     let productCopy = product.cloneNode(true); //may need to be var instead of let
+        //     productList.appendChild(productCopy);
+        //     var productID = "ID" + i;
+        //     productCopy.id = productID;
+        //     productCopy.querySelector('.productName').innerHTML = tshirts[i][0];
+        //     productCopy.querySelector('.productDescription').innerHTML = tshirts[i][1];
+        //     productCopy.querySelector('.productPrice').innerHTML = tshirts[i][3];
+        //     productCopy.querySelector('.productImage').src = "resources/" + tshirts[i][4];
+        // }
+
         //hide the orginal/template product card
-        product.style.display = 'none';
+        // product.style.display = 'none';
 
 
 
