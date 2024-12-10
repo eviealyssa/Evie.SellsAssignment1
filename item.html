@@ -46,11 +46,13 @@
     </header>
 
 <!-- Main -->
-    <h1 id="nameProduct">Name</h1>
-    <img id="imageProduct" src='' alt="Product Image" width="70%">
-    <h2 id="priceProduct">price</h2>
-    <h2 id="colourProduct">product colour</h2>
-    <h3 id="descProduct">description of product</h3>
+    <div class="itemPageContainer">
+        <h1 id="nameProduct">Name</h1>
+        <img id="imageProduct" src='' alt="Product Image" width="40%">
+        <h2 id="priceProduct">price</h2>
+        <h2 id="colourText">Colour: </h2><h2 id="colourProduct">product colour</h2>
+        <p id="descProduct">description of product</p>
+    </div>
 
 
 <!-- Footer -->
@@ -120,7 +122,7 @@
         function addItemDetails()
         {
             //get id from session storage
-            var productID = sessionStorage.getItem("itemToView");
+            var productID = sessionStorage.getItem("itemToView"); //may need to be local storage
 
             //find what type the ID is
             var productArray;
@@ -154,7 +156,6 @@
             document.getElementById("descProduct").innerHTML = itemDetails[2];
             document.getElementById("priceProduct").innerHTML = itemDetails[3];
             document.getElementById("imageProduct").src = "resources/" + itemDetails[4];
-
         }
     
     

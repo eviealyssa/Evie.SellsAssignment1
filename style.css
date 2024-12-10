@@ -9,12 +9,13 @@
 body {
     margin: 0;
 }
-/* css for body -- index page*/
+
 h1 {
     text-align: center;
     color: #34516C;    
 }
 
+/* css for body -- index page*/
 .welcomeVideoMp4 {
     width: 250%;
     float: inline-start;
@@ -124,16 +125,38 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: none;
 }
 
 #jumperContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: none;
 }
 
+
+/* css for item page */
+.itemPageContainer {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0.7em;
+    /* padding: 0.5em;     */
+}
+
+#imageProduct {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#colourText {
+    display: inline;
+}
+
+#colourProduct {
+    display: inline;
+}
 
 /* css for mobile version */
 @media screen and (max-width: 768px) {
@@ -151,6 +174,27 @@ h1 {
         flex-direction: column;
     }
 
+    /* css for item page */
+    #descProduct {
+        font-size: 1em;
+    }
+    
+    #nameProduct {
+        font-size: 1.3em;
+    }
+
+    #priceProduct {
+        font-size: 1.3em;
+    } 
+
+    #colourText {
+        font-size: 1.3em;
+    }
+
+    #colourProduct {
+        font-size: 1.3em;
+    }
+
 }
 
    /* css for tablet version */
@@ -159,7 +203,29 @@ h1 {
     h1 {
         font-size: 3em;
     }
-    
+
+    /* css for item page */
+    #descProduct {
+        font-size: 1.7em;
+    }
+
+    #nameProduct {
+        font-size: 1.7em;
+    }
+
+    #priceProduct {
+        font-size: 1.7em;
+    } 
+
+    #colourText {
+        font-size: 1.7em;
+    }
+
+    #colourProduct {
+        font-size: 1.7em;
+    }
+
+
 }
 
   /* css for desktop version */
@@ -168,4 +234,27 @@ h1 {
     h1 {
         font-size: 4em;
     }
+    
+    /* css for item page */
+    #descProduct {
+        font-size: 2.0em;
+        color: aqua;
+    }
+
+    #nameProduct {
+        font-size: 2.3em;
+    }
+
+    #priceProduct {
+        font-size: 2.3em;
+    } 
+
+    #colourText {
+        font-size: 2.3em;
+    }
+
+    #colourProduct {
+        font-size: 2.3em;
+    }
+
 }
