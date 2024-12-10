@@ -4,8 +4,10 @@
 <html lang="en">
 
 <head>
-    <!-- link to the stylesheet -->
-    <link rel="stylesheet" href="productStyle.css" type= "text/css">
+    <!-- link to the stylesheets -->
+    <link rel="stylesheet" href="style.css" type= "text/css">
+
+    <link rel="stylesheet" href="headFootStyle.css" type= "text/css">
 
     <!-- embed products array into file -->
     <script src="./resources/product-array.js"></script>
@@ -152,8 +154,8 @@
             }
         }
 
-        
-        addProductsToPage('tshirts',tshirts, 'tshirtContainer');
+        //populate products page with products
+        addProductsToPage('tshirts', tshirts, 'tshirtContainer');
 
         addProductsToPage('hoodies', hoodies, 'hoodyContainer');
 
@@ -162,7 +164,7 @@
         //hide the orginal/template product card in each section
         document.querySelector(".productCard").style.display = "none";
 
-
+        var shoppingBag = [];
 
         function addToCart(elm)
         {
@@ -171,39 +173,16 @@
             // gets the ID of the selected productCard
             var idProduct = parent.id;
 
-            //What I want to store for each item ???
-            //ID, quantity, Name, Description, Price, Image 
+            //add product to shopping bag
+            shoppingBag.push(idProduct);
 
-
-
-            sessionStorage.setItem("cartList", idProduct)
-            console.log("get item = ", sessionStorage.getItem("cartList"));
-        
-
+            //stores shopping bag in memory
+            sessionStorage.setItem("shoppingBag", JSON.stringify(shoppingBag))
+            console.log("get item = ", sessionStorage.getItem("shoppingBag"));
+            
+            //message to user that item has been added
+            alert("Item added to cart");
         }
-
-
-        //populate page with products (tshirts)
-        // const productList = document.getElementById('productContainer');
-        // const product = document.querySelector(".productCard");
-
-        // for (i=0; i < tshirts.length; ++i)
-        // {
-        //     let productCopy = product.cloneNode(true); //may need to be var instead of let
-        //     productList.appendChild(productCopy);
-        //     var productID = "ID" + i;
-        //     productCopy.id = productID;
-        //     productCopy.querySelector('.productName').innerHTML = tshirts[i][0];
-        //     productCopy.querySelector('.productDescription').innerHTML = tshirts[i][1];
-        //     productCopy.querySelector('.productPrice').innerHTML = tshirts[i][3];
-        //     productCopy.querySelector('.productImage').src = "resources/" + tshirts[i][4];
-        // }
-
-        //hide the orginal/template product card
-        // product.style.display = 'none';
-
-
-
     </script>
 </body>
 </html>
