@@ -1,0 +1,165 @@
+<!-- Conatins 2 videos and a welcome message -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- link to the stylesheet -->
+    <link rel="stylesheet" href="style.css" type= "text/css">
+
+    <link rel="stylesheet" href="headFootStyle.css" type= "text/css">
+
+    <!-- embed products array into file -->
+    <script src="./resources/product-array.js"></script>
+
+    <!-- setting up project -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evie Sells - UCLan Shop</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- navigation bar -->
+            <div class="topNavBar">
+                <!-- adding in logo -->
+                <div class="logo">
+                    <img src="resources/images/logo.svg" alt="UCLan logo" height="65rem" >
+                </div>
+
+                <!-- adding in hamburg menu icon for mobile users -->
+                <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40px"></a>
+
+                <!-- links for page navigation -->
+                <li id="navLinks">
+                    <a href="index.html" class="activePage">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="cart.html" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
+                </li>
+
+                <!-- cart menu icon for desktop / tablet -->
+                <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
+            </div>
+        </nav>
+
+    </header>
+
+<!-- Main -->
+    <h1 id="nameProduct">Name</h1>
+    <img id="imageProduct" src='' alt="Product Image" width="70%">
+    <h2 id="priceProduct">price</h2>
+    <h2 id="colourProduct">product colour</h2>
+    <h3 id="descProduct">description of product</h3>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="contactInfo">
+            <h2>Contact Info:</h2>
+            <p>Name: Evie Sells</p>
+            <p>Email: <a id="emailAddress" href="mailto:EASells@uclan.ac.uk">EASells@uclan.ac.uk</a></p>
+            <p>Reg.No: 21255921</p>
+        </div>
+
+        <div class="assignmentDetails">
+            <h2>Details:</h2>
+            <p>CO1707: Web Technologies</p>
+            <p>Assignment 1: Web Application</p>
+        </div>
+
+        <div class="FindSU">
+            <h2>Find the SU:</h2>
+            <p>University of Central Lancashire Students' Union,</p>
+            <p>Fylde Road, Preston. PR1 7BY</p>
+        </div>
+
+        <div class="socialMediaIcons">
+            <h2>Stay in touch with the SU!</h2>
+
+            <div class="iconsFooter">
+                <a href="https://www.facebook.com/uclanstudentsunion/">
+                    <img src='resources/images/social media icons/facebook-social-media-icon.svg' alt="Facebook icon" height="40">
+                </a>
+    
+                <a href="https://www.tiktok.com/@uclansu">
+                    <img src='resources/images/social media icons/tiktok-social-media-icon.svg' alt="TikTok icon" height="40">
+                </a>
+    
+                <a href="https://www.instagram.com/uclansu/">
+                    <img src='resources/images/social media icons/instagram-social-media-icon.svg' alt="Instagram icon" height="40">
+                </a>
+    
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2FUCLanSU">
+                    <img src='resources/images/social media icons/x-social-media-black-icon.svg' alt="X icon" height="40">
+                </a>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+<!-- script - JS -->
+    <script>
+        // Open / Close hamburger navigation function
+        function openHamburgerNav()
+        {
+            // get navLink and set as linksNav
+            var linksNav = document.getElementById("navLinks");
+            // If nav shown, hide
+            if (linksNav.style.display === "inline-table") {
+                linksNav.style.display = "none";
+            } 
+            // If nav hidden, show
+            else {
+                linksNav.style.display = "inline-table";
+            }
+        }
+
+        // add info about item to page
+        function addItemDetails()
+        {
+            //get id from session storage
+            var productID = sessionStorage.getItem("itemToView");
+
+            //find what type the ID is
+            var productArray;
+            var firstLetter = productID[0];
+            if (firstLetter == 't')
+            {
+                productArray = tshirts;
+            }
+            else if (firstLetter == 'h')
+            {
+                productArray = hoodies;
+            }
+            else 
+            {
+                productArray = jumpers;
+            }
+
+            //find the ID
+            var dIndex = productID.indexOf("D");
+            var length = productID.length;
+            //get the ID by creating a substring
+            var idNum = productID.substring(dIndex+1,length);
+            console.log("ID = ", idNum);
+
+            //get the details of the id
+            var itemDetails = productArray[idNum];
+
+            //populate id's with values
+            document.getElementById("nameProduct").innerHTML = itemDetails[0];
+            document.getElementById("colourProduct").innerHTML = itemDetails[1];
+            document.getElementById("descProduct").innerHTML = itemDetails[2];
+            document.getElementById("priceProduct").innerHTML = itemDetails[3];
+            document.getElementById("imageProduct").src = "resources/" + itemDetails[4];
+
+        }
+    
+    
+        addItemDetails();
+    
+    </script>
+</body>
+</html>
