@@ -50,7 +50,7 @@
     <!-- product card template & tshirt container-->
     <div id="tshirtContainer">
         <div class="productCard">
-            <img class="productImage" src='' alt="Product Image" width="50%">
+            <img class="productImage" src='' alt="Product Image" width="50%" onclick="viewItem(this)">
             <h1 class="productName">name</h1>
             <h3 class="productPrice">price</h3>
             <p class="productDescription">description</p>
@@ -166,6 +166,20 @@
 
         var shoppingBag = [];
 
+        function viewItem(elm)
+        {
+            //gets the parent (productCard) of the button
+            var parent = elm.parentNode;
+            // gets the ID of the selected productCard
+            var idProduct = parent.id;
+
+            sessionStorage.setItem("itemToView", idProduct);
+
+            //opens index page
+            window.open(href="item.html", target="_self", "width=200,height=100");
+        }
+
+
         function addToCart(elm)
         {
             //gets the parent (productCard) of the button
@@ -179,7 +193,7 @@
             //stores shopping bag in memory
             sessionStorage.setItem("shoppingBag", JSON.stringify(shoppingBag))
             console.log("get item = ", sessionStorage.getItem("shoppingBag"));
-            
+
             //message to user that item has been added
             alert("Item added to cart");
         }
