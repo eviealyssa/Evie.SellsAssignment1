@@ -6,56 +6,11 @@
     overflow-x: hidden;
 }
 
-/* css for navigation bar */
-header {
-    width: 100%;
-    height: auto;
-    position: sticky;
-    background-color: #919CAD; /* Silver from colour palette */
-}
-
-.logo {
-    padding-left: 10px;
-    padding-right: 25px;
-    float: left;
-    height: 15%;
-}
-
-.topNavBar a.activePage {
-    text-decoration: underline;
-}
-
-.topNavBar {
-    background-color: #919CAD;
-    overflow: hidden;
-    position: relative;
-}
-  
-.topNavBar a {
-    color: white;
-    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-    padding: 14px 16px 0.9em;
-    display: block;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 480;
-}
-  
-.topNavBar a:hover {
-    text-decoration: underline;
-}
-  
-.topNavBar a.splitNav {
-    float: right;
-    padding-top: 1%; 
-}
-
-/* css for body */
 body {
     margin: 0;
 }
-
-.welcomeToSU {
+/* css for body -- index page*/
+h1 {
     text-align: center;
     color: #34516C;    
 }
@@ -113,66 +68,81 @@ body {
     padding: 1em;
 }
 
-.breakPoint {
-    margin: 2%;
+/* css for product page */
+.productCard {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    border: solid #34516C;
+    border-radius: 25px;
+    max-width: 250px;
+    margin: 0.7em;
+    padding: 0.5em;
+    text-align: center;
+    font-family: arial;
+  }
+  
+.productPrice {
+    color: grey;
+    font-size: 1.2em;
 }
 
-/* css for footer */
-footer {
-    display: grid;
-    gap: 1px 3px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+.productDescription{
+    font-size: 1em;
+}
+
+.productName{
+    font-size: 1.3em;
+}
+
+.productCard button {
+    border: solid #34516C;
+    border-radius: 16px;
+    outline: 0;
+    padding: 8px;
+    color: white;
     background-color: #34516C;
-    color: #C7CBDA;
-    text-align: left;
-}
-
-#emailAddress {
-    color: #C7CBDA;
-}
-
-.iconsFooter {
-    display: block;
-    margin: auto;
+    text-align: center;
+    cursor: pointer;
     width: 100%;
+    font-size: 1em;
 }
 
-.socialMediaIcons a {
-    text-decoration: none;
-} 
+.productCard button:hover {
+    opacity: 0.7;
+}
 
+.productCard .productImage:hover {
+    opacity: 0.5;
+}
+
+#tshirtContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#hoodyContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: none;
+}
+
+#jumperContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: none;
+}
 
 
 /* css for mobile version */
 @media screen and (max-width: 768px) {
-    /* css for navigation */
-    .topNavBar a#cartIcon {
-        display: none;
+    /* css for all */
+    h1 {
+        font-size: 2em;
     }
 
-    .topNavBar #navLinks {
-        display: none;
-        width: 100%;
-        font-size: 0.8em;
-        background-color: rgb(52, 81, 108, 0.3);
-    }
-
-    .topNavBar a.mobileMenuIcon {
-        display: inline;
-    }
-
-    .topNavBar a#cartText {
-        display: inline-table;
-    }
-
-
-    /* css for body */
-    .welcomeToSU {
-        font-size: 1em;
-    }
-
+    /* css for index page */
     .homeSection1 {
         flex-direction: column;
     }
@@ -181,136 +151,21 @@ footer {
         flex-direction: column;
     }
 
-
-    /* css for footer */
-    .contactInfo {
-        margin-left: 5%;
-        margin-right: 2%;
-        text-decoration: none;
-        grid-column: 1;
-    }
-    
-    .assignmentDetails {
-        margin-left: 2%;
-        margin-right: 2%;
-        grid-column: 2;
-    }
-    
-    .FindSU {
-        margin-right: 2%;
-        margin-left: 5%;
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    .socialMediaIcons {
-        display: inline;
-        margin: 2%;
-        grid-column: 2;
-        grid-row: 2;
-    }
-    
 }
 
    /* css for tablet version */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-    /* css for navigation */
-    .topNavBar a {
-        float: inline-start;
-    }
-
-    .topNavBar a#cartIcon {
-        display: inline;
-        padding-top: 1%; 
-    }
-
-    .topNavBar #navLinks {
-        display: inline-block;
-    }
-
-    .topNavBar a.mobileMenuIcon {
-        display: none;
-    }
-
-    .topNavBar a#cartText {
-        display: none;
-    }
-
-
-    /* css for body */
-    .welcomeToSU {
-        font-size: 1.5em;
-    }
-
-
-    /* css for footer */
-    .contactInfo {
-        margin-left: 5%;
-        margin-right: 2%;
-        text-decoration: none;
-        grid-column: 1;
-    }
-        
-    .FindSU {
-        margin-right: 2%;
-        margin-left: 5%;
-        grid-column: 3;
+    /* css for all */
+    h1 {
+        font-size: 3em;
     }
     
 }
 
-
-
   /* css for desktop version */
-@media screen and (min-width: 1025px) {
-    /* css for navigation */
-    .topNavBar a {
-        float: inline-start;
-    }
-
-    .topNavBar a#cartIcon {
-        display: inline;
-        padding-top: 1%; 
-    }
-
-    .topNavBar #navLinks {
-        display: inline-block;
-    }
-
-    .topNavBar a.mobileMenuIcon {
-        display: none;
-    }
-
-    .topNavBar a#cartText {
-        display: none;
-    }
-    
-    /* css for body */
-    .welcomeToSU {
-        font-size: 2em;
-    }
-
-
-    /* css for footer */
-    .contactInfo {
-        margin-left: 5%;
-        margin-right: 2%;
-        text-decoration: none;
-        grid-column: 1;
-    }
-    
-    #emailAddress {
-        color: #C7CBDA;
-    }
-    
-    .FindSU {
-        margin-right: 2%;
-        margin-left: 5%;
-        grid-column: 3;
-    }
-    
-    .socialMediaIcons {
-        display: inline;
-        grid-column: 4;
+@media screen and (min-width: 1025px) {    
+    /* css for all */
+    h1 {
+        font-size: 4em;
     }
 }
