@@ -69,7 +69,23 @@ h1 {
     padding: 1em;
 }
 
+
+
 /* css for product page */
+
+#scrollToTopBtn {
+    float: right;
+    position: fixed;
+    border: solid #34516C;
+    border-radius: 100px;
+    background-color: #34516C;
+    color: white;
+    font-size: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+
 .productCard {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     border: solid #34516C;
@@ -90,11 +106,11 @@ h1 {
     font-size: 1em;
 }
 
-.productName{
+.productName {
     font-size: 1.3em;
 }
 
-.productCard button {
+.addToBagBtn {
     border: solid #34516C;
     border-radius: 16px;
     outline: 0;
@@ -113,6 +129,11 @@ h1 {
 
 .productCard .productImage:hover {
     opacity: 0.5;
+}
+
+.readMoreLink {
+    font-size: 0.9em;
+    padding: auto;
 }
 
 #tshirtContainer {
@@ -135,6 +156,18 @@ h1 {
 
 
 /* css for item page */
+#backToPageBtn {
+    float: left;
+    position: fixed;
+    border: solid #34516C;
+    border-radius: 100px;
+    background-color: #34516C;
+    color: white;
+    font-size: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
 .itemPageContainer {
     display: block;
     flex-wrap: wrap;
@@ -180,7 +213,7 @@ h1 {
     }
     
     #nameProduct {
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     #priceProduct {
@@ -206,11 +239,11 @@ h1 {
 
     /* css for item page */
     #descProduct {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
 
     #nameProduct {
-        font-size: 1.7em;
+        font-size: 1.9em;
     }
 
     #priceProduct {
@@ -237,12 +270,11 @@ h1 {
     
     /* css for item page */
     #descProduct {
-        font-size: 2.0em;
-        color: aqua;
+        font-size: 2.1em;
     }
 
     #nameProduct {
-        font-size: 2.3em;
+        font-size: 2.5em;
     }
 
     #priceProduct {

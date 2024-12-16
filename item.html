@@ -1,4 +1,9 @@
 <!-- Conatins 2 videos and a welcome message -->
+<!-- 
+Evie Sells
+Reg No. 21255921
+Email: EASells@uclan.ac.uk 
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +38,8 @@
 
                 <!-- links for page navigation -->
                 <li id="navLinks">
-                    <a href="index.html" class="activePage">Home</a>
-                    <a href="products.html">Products</a>
+                    <a href="index.html" target="_self">Home</a>
+                    <a href="products.html" target="_self" >Products</a>
                     <a href="cart.html" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
                 </li>
 
@@ -46,12 +51,16 @@
     </header>
 
 <!-- Main -->
+
+    <button id="backToPageBtn" onclick="backToPage()">Back</button>
+
     <div class="itemPageContainer">
         <h1 id="nameProduct">Name</h1>
         <img id="imageProduct" src='' alt="Product Image" width="40%">
         <h2 id="priceProduct">price</h2>
         <h2 id="colourText">Colour: </h2><h2 id="colourProduct">product colour</h2>
         <p id="descProduct">description of product</p>
+        <button class="addToBagBtn" onclick="addToCartFromItem(this)">Add to Cart</button>
     </div>
 
 
@@ -118,11 +127,37 @@
             }
         }
 
+
+        //add to bag
+        function addToCartFromItem(elm)
+        {
+            var ID = sessionStorage.getItem("itemToView");
+
+            var cartList = [];
+            cartList = sessionStorage.getItem("shoppingBag");
+
+            //If there are already items in the cart
+            if (cartList != null)
+            {
+                cartList = cartList + "," + ID;
+                sessionStorage.setItem("shoppingBag", cartList);
+            } 
+            //if cart is empty - add straight away
+            else
+            {
+                sessionStorage.setItem("shoppingBag", ID);
+            }
+
+            //message to user that item has been added
+            alert("Item added to cart");
+        }
+
+
         // add info about item to page
         function addItemDetails()
         {
             //get id from session storage
-            var productID = sessionStorage.getItem("itemToView"); //may need to be local storage
+            var productID = sessionStorage.getItem("itemToView");
 
             //find what type the ID is
             var productArray;
@@ -145,7 +180,6 @@
             var length = productID.length;
             //get the ID by creating a substring
             var idNum = productID.substring(dIndex+1,length);
-            console.log("ID = ", idNum);
 
             //get the details of the id
             var itemDetails = productArray[idNum];
@@ -160,6 +194,15 @@
     
     
         addItemDetails();
+
+        function backToPage()
+        {
+            let height = sessionStorage.getItem("scrollHeight");
+            console.log("height = ", height)
+
+            // go to product page
+            window.open("products.html", "_self");
+        }
     
     </script>
 </body>

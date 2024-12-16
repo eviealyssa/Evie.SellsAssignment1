@@ -1,4 +1,7 @@
 # Evie.SellsAssignment1
+## Evie Sells
+## Reg No. 21255921
+## Email: EASells@uclan.ac.uk
 
 ## Index
 The index or home page of my project has been implmented with ...
@@ -16,3 +19,15 @@ https://www.w3schools.com/html/html5_video.asp
 
 #### Hamburg Navigation
 https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+
+
+### Process behind page
+
+
+## Products Page
+
+### Wider Reading / Resources Used
+
+#### Product Page
+
+### Process behind page
