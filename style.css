@@ -9,12 +9,13 @@
 body {
     margin: 0;
 }
-/* css for body -- index page*/
+
 h1 {
     text-align: center;
     color: #34516C;    
 }
 
+/* css for body -- index page*/
 .welcomeVideoMp4 {
     width: 250%;
     float: inline-start;
@@ -68,7 +69,23 @@ h1 {
     padding: 1em;
 }
 
+
+
 /* css for product page */
+
+#scrollToTopBtn {
+    float: right;
+    position: fixed;
+    border: solid #577A9B;
+    border-radius: 100px;
+    background-color: #577A9B; /* slate */
+    color: white;
+    font-size: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+
 .productCard {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     border: solid #34516C;
@@ -89,11 +106,11 @@ h1 {
     font-size: 1em;
 }
 
-.productName{
+.productName {
     font-size: 1.3em;
 }
 
-.productCard button {
+.addToBagBtn {
     border: solid #34516C;
     border-radius: 16px;
     outline: 0;
@@ -114,6 +131,11 @@ h1 {
     opacity: 0.5;
 }
 
+.readMoreLink {
+    font-size: 0.9em;
+    padding: auto;
+}
+
 #tshirtContainer {
     display: flex;
     flex-wrap: wrap;
@@ -124,16 +146,50 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: none;
 }
 
 #jumperContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: none;
 }
 
+
+/* css for item page */
+#backToPageBtn {
+    float: left;
+    position: sticky;
+    border: solid #34516C;
+    border-radius: 100px;
+    background-color: #34516C;
+    color: white;
+    font-size: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.itemPageContainer {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0.7em;
+    /* padding: 0.5em;     */
+}
+
+#imageProduct {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#colourText {
+    display: inline;
+}
+
+#colourProduct {
+    display: inline;
+}
 
 /* css for mobile version */
 @media screen and (max-width: 768px) {
@@ -151,6 +207,27 @@ h1 {
         flex-direction: column;
     }
 
+    /* css for item page */
+    #descProduct {
+        font-size: 1em;
+    }
+    
+    #nameProduct {
+        font-size: 1.5em;
+    }
+
+    #priceProduct {
+        font-size: 1.3em;
+    } 
+
+    #colourText {
+        font-size: 1.3em;
+    }
+
+    #colourProduct {
+        font-size: 1.3em;
+    }
+
 }
 
    /* css for tablet version */
@@ -159,7 +236,29 @@ h1 {
     h1 {
         font-size: 3em;
     }
-    
+
+    /* css for item page */
+    #descProduct {
+        font-size: 1.5em;
+    }
+
+    #nameProduct {
+        font-size: 1.9em;
+    }
+
+    #priceProduct {
+        font-size: 1.7em;
+    } 
+
+    #colourText {
+        font-size: 1.7em;
+    }
+
+    #colourProduct {
+        font-size: 1.7em;
+    }
+
+
 }
 
   /* css for desktop version */
@@ -168,4 +267,26 @@ h1 {
     h1 {
         font-size: 4em;
     }
+    
+    /* css for item page */
+    #descProduct {
+        font-size: 2.1em;
+    }
+
+    #nameProduct {
+        font-size: 2.5em;
+    }
+
+    #priceProduct {
+        font-size: 2.3em;
+    } 
+
+    #colourText {
+        font-size: 2.3em;
+    }
+
+    #colourProduct {
+        font-size: 2.3em;
+    }
+
 }

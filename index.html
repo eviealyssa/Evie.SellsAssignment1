@@ -1,4 +1,10 @@
 <!-- Conatins 2 videos and a welcome message -->
+<!-- 
+Evie Sells
+Reg No. 21255921
+Email: EASells@uclan.ac.uk 
+-->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +35,9 @@
 
                 <!-- links for page navigation -->
                 <li id="navLinks">
-                    <a href="index.html" class="activePage">Home</a>
-                    <a href="products.html">Products</a>
-                    <a href="cart.html" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
+                    <a href="index.html" target="_self"  class="activePage">Home</a>
+                    <a href="products.html" target="_self" >Products</a>
+                    <a href="cart.html" target="_self" id="cartText">Cart</a> <!-- id allows to hide/display cart text -->
                 </li>
 
                 <!-- cart menu icon for desktop / tablet -->
@@ -148,6 +154,9 @@
                 linksNav.style.display = "inline-table";
             }
         }
+
+        //sets scroll height to 0 -- for products page
+        sessionStorage.setItem("scrollHeight", 0);
 
     </script>
 </body>
