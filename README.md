@@ -24,6 +24,7 @@ https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 ### Process behind page
 
 
+
 ## Products Page
 
 ### Wider Reading / Resources Used
@@ -34,5 +35,7 @@ https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jqu
 ### Process behind page
 
 
+
 ## Item Page
 https://www.tutorialspoint.com/how-do-i-call-a-javascript-function-on-page-load
+https://www.w3schools.com/jsref/met_win_scrollto.asp

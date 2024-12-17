@@ -1,0 +1,315 @@
+<!-- Conatins 2 videos and a welcome message -->
+<!-- 
+Evie Sells
+Reg No. 21255921
+Email: EASells@uclan.ac.uk 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- link to the stylesheet -->
+    <link rel="stylesheet" href="style.css" type= "text/css">
+    <link rel="stylesheet" href="headFootStyle.css" type= "text/css">
+
+    <!-- embed products array into file -->
+    <script src="./resources/product-array.js"></script>
+
+    <!-- setting up project -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evie Sells - UCLan Shop - Cart</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- navigation bar -->
+            <div class="topNavBar">
+                <!-- adding in logo -->
+                <div class="logo">
+                    <img src="resources/images/logo.svg" alt="UCLan logo" height="65rem" >
+                </div>
+
+                <!-- adding in hamburg menu icon for mobile users -->
+                <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40px"></a>
+
+                <!-- links for page navigation -->
+                <li id="navLinks">
+                    <a href="index.html" target="_self">Home</a>
+                    <a href="products.html" target="_self" >Products</a>
+                    <a href="cart.html" target="_self" id="cartText" class="activePage">Cart</a> <!-- id allows to hide/display cart text -->
+                </li>
+
+                <!-- cart menu icon for desktop / tablet -->
+                <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main -->
+    <!-- Item container template -->
+    <div id="itemCartContainer">
+        <div class="itemCartCard">
+            <img class="itemCartImage" src='' alt="Product Image" width="40%" onclick="viewItem(this)">
+            <div class="itemCartInfo">
+                <h2 class="itemCartName">name</h2>
+                <h3 class="itemCartPrice">price</h3>
+                <p class="itemCartColour">colour</p>
+            </div>
+
+            <div class="itemCartQuanity">
+                <h3 class="itemCartQuantityText">Quantity:</h3>
+                <h3 class="itemCartQuantityInfo">amount</h3>
+
+                <div class="quantityBtns">
+                    <button class="quantBtn" onclick="increaseQuantity(this)">+</button>
+                    <button class="quantBtn" onclick="decreaseQuantity()">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="contactInfo">
+            <h2>Contact Info:</h2>
+            <p>Name: Evie Sells</p>
+            <p>Email: <a id="emailAddress" href="mailto:EASells@uclan.ac.uk">EASells@uclan.ac.uk</a></p>
+            <p>Reg.No: 21255921</p>
+        </div>
+
+        <div class="assignmentDetails">
+            <h2>Details:</h2>
+            <p>CO1707: Web Technologies</p>
+            <p>Assignment 1: Web Application</p>
+        </div>
+
+        <div class="FindSU">
+            <h2>Find the SU:</h2>
+            <p>University of Central Lancashire Students' Union,</p>
+            <p>Fylde Road, Preston. PR1 7BY</p>
+        </div>
+
+        <div class="socialMediaIcons">
+            <h2>Stay in touch with the SU!</h2>
+
+            <div class="iconsFooter">
+                <a href="https://www.facebook.com/uclanstudentsunion/">
+                    <img src='resources/images/social media icons/facebook-social-media-icon.svg' alt="Facebook icon" height="40">
+                </a>
+    
+                <a href="https://www.tiktok.com/@uclansu">
+                    <img src='resources/images/social media icons/tiktok-social-media-icon.svg' alt="TikTok icon" height="40">
+                </a>
+    
+                <a href="https://www.instagram.com/uclansu/">
+                    <img src='resources/images/social media icons/instagram-social-media-icon.svg' alt="Instagram icon" height="40">
+                </a>
+    
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2FUCLanSU">
+                    <img src='resources/images/social media icons/x-social-media-black-icon.svg' alt="X icon" height="40">
+                </a>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script>
+         // Open / Close hamburger navigation function
+         function openHamburgerNav()
+        {
+            // get navLink and set as linksNav
+            var linksNav = document.getElementById("navLinks");
+            // If nav shown, hide
+            if (linksNav.style.display === "inline-table") {
+                linksNav.style.display = "none";
+            } 
+            // If nav hidden, show
+            else {
+                linksNav.style.display = "inline-table";
+            }
+        }
+
+        function addItemDetailsToCartPage(shoppingCart)
+        {
+            const itemCartList = document.getElementById('itemCartContainer');
+            const itemCartCard = document.querySelector(".itemCartCard");
+
+            //find what type the ID is
+
+            for (var i = 0; i < shoppingCart.length; i++)
+            {
+                var productArray;
+                var productID = shoppingCart[i][0];
+                var firstLetter = productID[0];
+                if (firstLetter == 't')
+                {
+                    productArray = tshirts;
+                }
+                else if (firstLetter == 'h')
+                {
+                    productArray = hoodies;
+                }
+                else 
+                {
+                    productArray = jumpers;
+                }
+
+                //find the ID
+                var dIndex = productID.indexOf("D");
+                var length = productID.length;
+                //get the ID by creating a substring
+                var idNum = productID.substring(dIndex+1,length);
+
+                //get the details of the id
+                var itemDetails = productArray[idNum];
+
+                let itemCartCardCopy = itemCartCard.cloneNode(true);
+                itemCartList.appendChild(itemCartCardCopy);
+
+                //set id
+                itemCartCardCopy.id = productID;
+
+                //populate id's with values
+                itemCartCardCopy.querySelector('.itemCartName').innerHTML = itemDetails[0];
+                itemCartCardCopy.querySelector('.itemCartColour').innerHTML = itemDetails[1];
+                itemCartCardCopy.querySelector('.itemCartPrice').innerHTML = itemDetails[3];
+                itemCartCardCopy.querySelector('.itemCartImage').src = "resources/" + itemDetails[4];
+                itemCartCardCopy.querySelector('.itemCartQuantityInfo').innerHTML = shoppingCart[i][1];;
+
+            }
+            document.querySelector(".itemCartCard").style.display="none";
+        }
+
+        function getCartDetails()
+        {
+            var cartString = sessionStorage.getItem("shoppingBag");
+            var cartList = [];
+            var cartWord = '';
+
+            var shoppingCart = [];
+
+            //If there are already items in the cart
+            if (cartString != null)
+            {
+                var commaFound = false;
+                //separated string into a list
+                for (var i=0; i < cartString.length; i++)
+                {
+                    //if letter/num - add to word
+                    if (cartString[i] != ',')
+                    {
+                        cartWord = cartWord + cartString[i];
+                    }
+                    //add word to array and reset word
+                    else {
+                        cartList.push(cartWord);
+                        cartWord = '';
+                        commaFound = true;
+                    }
+                }
+
+                // adds last item to cartList (or first if there was no comma)
+                cartList.push(cartWord);
+
+                // for each item in cartList -  add to 3d array
+                for (var j=0; j < cartList.length; j++)
+                {
+                    // if empty - add straight away
+                    if (shoppingCart == null)
+                    {
+                        shoppingCart.push([cartList[j],1]);
+                    }
+                    //if items in cart - search to see if cartList[j] is in there
+                    else
+                    {
+                        var found = false;
+                        for (let count = 0; count < shoppingCart.length; count ++)
+                        {
+                            if (shoppingCart[count][0] == cartList[j] )
+                            {
+                                //increase quantity
+                                let temp = shoppingCart[count][1];
+                                temp += 1;
+                                shoppingCart[count][1] = temp;
+                                found = true;
+                            }
+                        }
+
+                        //if not found in cart - addd
+                        if (found == false)
+                        {
+                            shoppingCart.push([cartList[j],1]);
+                        }
+                    }
+                }
+
+                //adds info about items to page
+                addItemDetailsToCartPage(shoppingCart);
+            }
+             //if cart is empty - show empty message
+            else
+            {
+                console.log("Bag is empty")
+            }
+        }
+
+
+
+        getCartDetails();
+
+
+        
+
+
+        function increaseQuantity(elm)
+        {
+            // get item cart card
+            var itemCartCard = elm.parentNode.parentNode.parentNode;
+
+            //get id of item cart card
+            var itemCartCardID = itemCartCard.id;
+            console.log("idProduct", itemCartCardID);
+
+            //add to cartList from storage
+            var cartList = [];
+            cartList = sessionStorage.getItem("shoppingBag");
+
+            cartList = cartList + "," + itemCartCardID;
+            sessionStorage.setItem("shoppingBag", cartList);
+
+            //re - do add to page ################################################################ MAY BE BETTER WAY OF DOING IT
+            //getCartDetails();
+            window.open("cart.html", "_self");
+        }
+
+        function decreaseQuantity()
+        {
+            console.log("decrease quantity")
+        }
+
+        function viewItem(elm)
+        {
+            //gets the parent (productCard) of the button
+            var parent = elm.parentNode;
+
+            // gets the ID of the selected productCard
+            var idProduct = parent.id;
+
+            // sets item in session storage
+            sessionStorage.setItem("itemToView", idProduct);
+
+            //opens index page
+            window.open(href="item.html", target="_self");
+        }
+
+    </script>
+
+
+</body>

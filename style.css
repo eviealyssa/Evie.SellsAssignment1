@@ -136,6 +136,10 @@ h1 {
     padding: auto;
 }
 
+.readMoreLink:hover {
+    text-decoration: underline;
+}
+
 #tshirtContainer {
     display: flex;
     flex-wrap: wrap;
@@ -190,6 +194,96 @@ h1 {
 #colourProduct {
     display: inline;
 }
+
+
+
+
+
+/* css for cart page */
+/* .itemCartCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.itemCartCard .splitScreen {
+    float: right;
+}
+
+.quanityItemCart {
+    display: flex;
+    flex-direction: column;
+}
+ */
+#itemCartContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.itemCartCard {
+    display: grid;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    border-bottom: 2px solid #C7CBDA;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.itemCartImage {
+    grid-column: 1;
+}
+
+.itemCartInfo{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    grid-column: 2;
+    margin:0;
+}
+
+.itemCartQuanity {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3;
+}
+
+.quantityBtns {
+    display: inline;
+    justify-items: center;
+}
+
+.itemCartName {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.itemCartPrice {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.itemCartColour {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.itemCartQuantityText {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.itemCartQuantityInfo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
 
 /* css for mobile version */
 @media screen and (max-width: 768px) {
