@@ -27,6 +27,7 @@ https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 ## Products Page
 
 ### Wider Reading / Resources Used
+https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jquery/
 
 #### Product Page
 

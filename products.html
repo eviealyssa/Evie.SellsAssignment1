@@ -23,7 +23,7 @@ Email: EASells@uclan.ac.uk
     <title>Evie Sells - UCLan Shop</title>
 </head>
 
-<body>
+<body onload="scrollToHeight()">
     <header>
         <nav>
             <!-- navigation bar -->
@@ -145,9 +145,10 @@ Email: EASells@uclan.ac.uk
             }
         }
 
-        // sets scroll hheigt to 0,0
+        // sets scroll heigt to 0,0
         function scrollToTop() //https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jquery/
         {
+            sessionStorage.setItem("scrollHeight", 0);
             window.scrollTo(0,0);
         }
 
@@ -227,6 +228,14 @@ Email: EASells@uclan.ac.uk
             //message to user that item has been added
             alert("Item added to cart");
         }
+
+        function scrollToHeight()
+        {
+            let yValue = sessionStorage.getItem("scrollHeight");
+            console.log("y value = ", yValue);
+            window.scrollTo(0,yValue);
+        }
+
     </script>
 </body>
 </html>

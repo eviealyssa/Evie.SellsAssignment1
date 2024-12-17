@@ -197,11 +197,15 @@ Email: EASells@uclan.ac.uk
 
         function backToPage()
         {
-            let height = sessionStorage.getItem("scrollHeight");
-            console.log("height = ", height)
+            // let height = sessionStorage.getItem("scrollHeight");
+            // console.log("height = ", height)
 
             // go to product page
             window.open("products.html", "_self");
+
+            // var productsPage = window.open("products.html", "_self");
+            // productsPage.onload(window.scrollTo(0,height));
+
         }
     
     </script>
