@@ -76,9 +76,9 @@ h1 {
 #scrollToTopBtn {
     float: right;
     position: fixed;
-    border: solid #34516C;
+    border: solid #577A9B;
     border-radius: 100px;
-    background-color: #34516C;
+    background-color: #577A9B; /* slate */
     color: white;
     font-size: 100%;
     padding: 10px;
@@ -158,7 +158,7 @@ h1 {
 /* css for item page */
 #backToPageBtn {
     float: left;
-    position: fixed;
+    position: sticky;
     border: solid #34516C;
     border-radius: 100px;
     background-color: #34516C;

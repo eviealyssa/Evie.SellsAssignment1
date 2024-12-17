@@ -32,3 +32,7 @@ https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jqu
 #### Product Page
 
 ### Process behind page
+
+
+## Item Page
+https://www.tutorialspoint.com/how-do-i-call-a-javascript-function-on-page-load
