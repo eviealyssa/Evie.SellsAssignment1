@@ -67,7 +67,7 @@ Email: EASells@uclan.ac.uk
 
                 <div class="quantityBtns">
                     <button class="quantBtn" onclick="increaseQuantity(this)">+</button>
-                    <button class="quantBtn" onclick="decreaseQuantity()">-</button>
+                    <button class="quantBtn" onclick="decreaseQuantity(this)">-</button>
                 </div>
             </div>
         </div>
@@ -184,7 +184,6 @@ Email: EASells@uclan.ac.uk
                 itemCartCardCopy.querySelector('.itemCartQuantityInfo').innerHTML = shoppingCart[i][1];;
 
             }
-            document.querySelector(".itemCartCard").style.display="none";
         }
 
         function getCartDetails()
@@ -198,8 +197,7 @@ Email: EASells@uclan.ac.uk
             //If there are already items in the cart
             if (cartString != null)
             {
-                var commaFound = false;
-                //separated string into a list
+                //separate string into a list
                 for (var i=0; i < cartString.length; i++)
                 {
                     //if letter/num - add to word
@@ -211,7 +209,6 @@ Email: EASells@uclan.ac.uk
                     else {
                         cartList.push(cartWord);
                         cartWord = '';
-                        commaFound = true;
                     }
                 }
 
@@ -249,7 +246,6 @@ Email: EASells@uclan.ac.uk
                         }
                     }
                 }
-
                 //adds info about items to page
                 addItemDetailsToCartPage(shoppingCart);
             }
@@ -264,6 +260,7 @@ Email: EASells@uclan.ac.uk
 
         getCartDetails();
 
+        document.querySelector(".itemCartCard").style.display = "none";
 
         
 
@@ -275,7 +272,6 @@ Email: EASells@uclan.ac.uk
 
             //get id of item cart card
             var itemCartCardID = itemCartCard.id;
-            console.log("idProduct", itemCartCardID);
 
             //add to cartList from storage
             var cartList = [];
@@ -284,15 +280,75 @@ Email: EASells@uclan.ac.uk
             cartList = cartList + "," + itemCartCardID;
             sessionStorage.setItem("shoppingBag", cartList);
 
-            //re - do add to page ################################################################ MAY BE BETTER WAY OF DOING IT
-            //getCartDetails();
+            // re-open cart page so value is changed
             window.open("cart.html", "_self");
         }
 
-        function decreaseQuantity()
+        function decreaseQuantity(elm)
         {
             console.log("decrease quantity")
+            // get item cart card
+            var itemCartCard = elm.parentNode.parentNode.parentNode;
+
+            //get id of item cart card
+            var itemCartCardID = itemCartCard.id;
+            console.log("idProduct", itemCartCardID);
+
+            // need to turn cartString (string) into a list (cartList)
+            var cartString = sessionStorage.getItem("shoppingBag");
+            var cartWord = '';
+            var cartList = [];
+
+            for (var i=0; i < cartString.length; i++)
+            {
+                //if letter/num - add to word
+                if (cartString[i] != ',')
+                {
+                    cartWord = cartWord + cartString[i];
+                }
+                //add word to array and reset word
+                else {
+                    cartList.push(cartWord);
+                    cartWord = '';
+                }
+            }
+
+            // adds last item to cartList (or first if there was no comma)
+            cartList.push(cartWord);
+
+            console.log("cartList = ", cartList);
+            // search cartList for ID
+            var isFound = false;
+            var firstIndex;
+
+            for (var index = 0; index < cartList.length; index++)
+            {
+                if (cartList[index] == itemCartCardID &&  isFound == false)
+                {
+                    isFound = true;
+                    firstIndex = index;
+                    console.log("isFound = ", true);
+                }
+            }
+
+            // if not found - give error
+            if (isFound == false)
+            {
+                alert("Error - item quantity could not be changed")
+            }
+            // if found - remove and reload page 
+            else 
+            {
+                cartList.splice(firstIndex,1); //https://www.w3schools.com/jsref/jsref_splice.asp
+                console.log("cartList after = ", cartList);
+                // set cartList in session storage
+                sessionStorage.setItem("shoppingBag", cartList);
+                // re-open cart page so value is changed
+                window.open("cart.html", "_self");
+            }
+            
         }
+
 
         function viewItem(elm)
         {
