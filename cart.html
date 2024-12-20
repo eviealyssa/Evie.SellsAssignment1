@@ -62,8 +62,8 @@ Email: EASells@uclan.ac.uk
             </div>
 
             <div class="itemCartQuanity">
-                <h3 class="itemCartQuantityText">Quantity:</h3>
-                <h3 class="itemCartQuantityInfo">amount</h3>
+                <h2 class="itemCartQuantityText">Quantity</h2>
+                <h2 class="itemCartQuantityInfo">amount</h2>
 
                 <div class="quantityBtns">
                     <button class="quantBtn" onclick="increaseQuantity(this)">+</button>
@@ -71,6 +71,11 @@ Email: EASells@uclan.ac.uk
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="bagEmpty">
+        <h1>Bag is empty</h1>
+        <button id="bagEmptyBtn" onclick="openProductsPage()">Start Shopping</button>
     </div>
 
 
@@ -256,14 +261,25 @@ Email: EASells@uclan.ac.uk
             }
         }
 
+        function openProductsPage()
+        {
+            window.open('products.html', '_self');
+        }
 
-
-        getCartDetails();
-
-        document.querySelector(".itemCartCard").style.display = "none";
-
-        
-
+        function isBagEmpty()
+        {
+            var cartString = sessionStorage.getItem("shoppingBag");
+            // if empty
+            if (cartString == null)
+            {
+                document.getElementById("bagEmpty").style.display = "block";
+            }
+            // if not empty
+            else
+            {
+                document.getElementById("bagEmpty").style.display = "none";
+            }
+        }
 
         function increaseQuantity(elm)
         {
@@ -286,13 +302,11 @@ Email: EASells@uclan.ac.uk
 
         function decreaseQuantity(elm)
         {
-            console.log("decrease quantity")
             // get item cart card
             var itemCartCard = elm.parentNode.parentNode.parentNode;
 
             //get id of item cart card
             var itemCartCardID = itemCartCard.id;
-            console.log("idProduct", itemCartCardID);
 
             // need to turn cartString (string) into a list (cartList)
             var cartString = sessionStorage.getItem("shoppingBag");
@@ -316,7 +330,6 @@ Email: EASells@uclan.ac.uk
             // adds last item to cartList (or first if there was no comma)
             cartList.push(cartWord);
 
-            console.log("cartList = ", cartList);
             // search cartList for ID
             var isFound = false;
             var firstIndex;
@@ -340,7 +353,7 @@ Email: EASells@uclan.ac.uk
             else 
             {
                 cartList.splice(firstIndex,1); //https://www.w3schools.com/jsref/jsref_splice.asp
-                console.log("cartList after = ", cartList);
+
                 // set cartList in session storage
                 sessionStorage.setItem("shoppingBag", cartList);
                 // re-open cart page so value is changed
@@ -365,6 +378,14 @@ Email: EASells@uclan.ac.uk
             window.open(href="item.html", target="_self");
         }
 
+        // main
+        isBagEmpty();
+        getCartDetails();
+
+        // hide item card template
+        document.querySelector(".itemCartCard").style.display = "none";
+
+        
     </script>
 
 

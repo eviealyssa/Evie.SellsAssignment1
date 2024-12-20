@@ -233,6 +233,9 @@ h1 {
 .itemCartImage {
     grid-column: 1;
 }
+.itemCartCard .itemCartImage:hover {
+    opacity: 0.5;
+}
 
 .itemCartInfo{
     display: flex;
