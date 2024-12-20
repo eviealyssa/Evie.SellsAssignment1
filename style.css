@@ -15,6 +15,10 @@ h1 {
     color: #34516C;    
 }
 
+.breakPoint {
+    margin: 2%;
+}
+
 /* css for body -- index page*/
 .welcomeVideoMp4 {
     width: 250%;
@@ -162,7 +166,7 @@ h1 {
 /* css for item page */
 #backToPageBtn {
     float: left;
-    position: sticky;
+    position: absolute;
     border: solid #34516C;
     border-radius: 100px;
     background-color: #34516C;

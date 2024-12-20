@@ -1,4 +1,4 @@
-<!-- Conatins 2 videos and a welcome message -->
+<!-- Displays all items in the cart -->
 <!-- 
 Evie Sells
 Reg No. 21255921
@@ -73,6 +73,12 @@ Email: EASells@uclan.ac.uk
         </div>
     </div>
 
+    <!-- displays the total of the basket -->
+    <div id="totalDiv">
+        <button id="totalPrice" onclick="payForCart()">Total: ££££</button>
+    </div>
+
+    <!-- displays if teh bag is empty -->
     <div id="bagEmpty">
         <h1>Bag is empty</h1>
         <button id="bagEmptyBtn" onclick="openProductsPage()">Start Shopping</button>
@@ -146,6 +152,8 @@ Email: EASells@uclan.ac.uk
             const itemCartList = document.getElementById('itemCartContainer');
             const itemCartCard = document.querySelector(".itemCartCard");
 
+            var priceSum = 0;
+
             //find what type the ID is
 
             for (var i = 0; i < shoppingCart.length; i++)
@@ -186,9 +194,25 @@ Email: EASells@uclan.ac.uk
                 itemCartCardCopy.querySelector('.itemCartColour').innerHTML = itemDetails[1];
                 itemCartCardCopy.querySelector('.itemCartPrice').innerHTML = itemDetails[3];
                 itemCartCardCopy.querySelector('.itemCartImage').src = "resources/" + itemDetails[4];
-                itemCartCardCopy.querySelector('.itemCartQuantityInfo').innerHTML = shoppingCart[i][1];;
+                itemCartCardCopy.querySelector('.itemCartQuantityInfo').innerHTML = shoppingCart[i][1];
+
+                // add price to total price
+                let itemPrice = itemDetails[3];
+
+                // remove £ from start of price
+                itemPrice = itemPrice.replace("£","");
+
+                // convert string to a float, multiply by the quantity and add to previous value
+                priceSum +=  parseFloat(itemPrice) * parseFloat(shoppingCart[i][1]);
+
+                // make sure priceSum is 2 decimals
+                priceSum = Math.round(priceSum * 100) / 100
+
+                // add priceSum to display
+                document.getElementById("totalPrice").innerHTML = "Total: £" + priceSum;
 
             }
+
         }
 
         function getCartDetails()
@@ -200,7 +224,7 @@ Email: EASells@uclan.ac.uk
             var shoppingCart = [];
 
             //If there are already items in the cart
-            if (cartString != null)
+            if (cartString != null || cartString != "" || cartString != '')
             {
                 //separate string into a list
                 for (var i=0; i < cartString.length; i++)
@@ -212,13 +236,18 @@ Email: EASells@uclan.ac.uk
                     }
                     //add word to array and reset word
                     else {
-                        cartList.push(cartWord);
-                        cartWord = '';
+                        if (cartWord != ''){
+                            cartList.push(cartWord);
+                            cartWord = '';
+                        }
+                        
                     }
                 }
 
                 // adds last item to cartList (or first if there was no comma)
-                cartList.push(cartWord);
+                if (cartWord != ''){
+                    cartList.push(cartWord);
+                }
 
                 // for each item in cartList -  add to 3d array
                 for (var j=0; j < cartList.length; j++)
@@ -244,7 +273,7 @@ Email: EASells@uclan.ac.uk
                             }
                         }
 
-                        //if not found in cart - addd
+                        //if not found in cart - add
                         if (found == false)
                         {
                             shoppingCart.push([cartList[j],1]);
@@ -254,15 +283,18 @@ Email: EASells@uclan.ac.uk
                 //adds info about items to page
                 addItemDetailsToCartPage(shoppingCart);
             }
-             //if cart is empty - show empty message
+            //if cart is empty - show empty message
             else
             {
-                console.log("Bag is empty")
+                isBagEmpty();
             }
         }
 
         function openProductsPage()
         {
+            //sets scroll height to 0 -- for products page
+            sessionStorage.setItem("scrollHeight", 0);
+            // opens product page
             window.open('products.html', '_self');
         }
 
@@ -270,7 +302,7 @@ Email: EASells@uclan.ac.uk
         {
             var cartString = sessionStorage.getItem("shoppingBag");
             // if empty
-            if (cartString == null)
+            if (cartString == null || cartString == "")
             {
                 document.getElementById("bagEmpty").style.display = "block";
             }
@@ -340,7 +372,6 @@ Email: EASells@uclan.ac.uk
                 {
                     isFound = true;
                     firstIndex = index;
-                    console.log("isFound = ", true);
                 }
             }
 
@@ -362,7 +393,6 @@ Email: EASells@uclan.ac.uk
             
         }
 
-
         function viewItem(elm)
         {
             //gets the parent (productCard) of the button
@@ -378,6 +408,18 @@ Email: EASells@uclan.ac.uk
             window.open(href="item.html", target="_self");
         }
 
+        function payForCart()
+        {
+            // alert saying thanks for shopping
+            alert("Thanks for your purchase! Payment has been collected from the registered card");
+
+            // clear shopping cart
+            sessionStorage.setItem("shoppingBag", "");
+
+            // re-open cart page
+            window.open(href="cart.html", target="_self");
+
+        }
         // main
         isBagEmpty();
         getCartDetails();
