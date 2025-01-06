@@ -1,10 +1,13 @@
-# Evie.SellsAssignment1
+# Evie.SellsAssignment1 - UCLAN Student Shop 
 ## Evie Sells
 ## Reg No. 21255921
 ## Email: EASells@uclan.ac.uk
 
-## Index
-The index or home page of my project has been implmented with ...
+## Index Page
+The index or home page of my project has been implmented with multiple features to 
+
+### Features and Resources Used
+
 
 ### Wider Reading / Resources Used
 
@@ -21,7 +24,6 @@ https://www.w3schools.com/html/html5_video.asp
 https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 
 
-### Process behind page
 
 
 

@@ -182,7 +182,6 @@ Email: EASells@uclan.ac.uk
         //hide the orginal/template product card in each section
         document.querySelector(".productCard").style.display = "none";
 
-
         function viewItem(elm)
         {
             //gets the parent (productCard) of the button
@@ -212,25 +211,25 @@ Email: EASells@uclan.ac.uk
             //get the data already in the cart
             var cartList = [];
             
-            cartList = sessionStorage.getItem("shoppingBag");
+            cartList = localStorage.getItem("shoppingBag");
 
             //If there are already items in the cart - add new item to end
             if (cartList != null)
             {
                 cartList = cartList + "," + idProduct;
-                sessionStorage.setItem("shoppingBag", cartList);
+                localStorage.setItem("shoppingBag", cartList);
             } 
             //if cart is empty - add straight away
             else
             {
-                sessionStorage.setItem("shoppingBag", idProduct);
+                localStorage.setItem("shoppingBag", idProduct);
             }
 
             //message to user that item has been added
             alert("Item added to cart");
         }
 
-        
+
         function scrollToHeight()
         {
             let yValue = sessionStorage.getItem("scrollHeight");
