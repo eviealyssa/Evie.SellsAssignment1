@@ -54,14 +54,14 @@ Email: EASells@uclan.ac.uk
 
     <button id="backToPageBtn" onclick="backToPage()">Back</button>
 
-    <div class="itemPageContainer">
+    <section class="itemPageContainer">
         <h1 id="nameProduct">Name</h1>
         <img id="imageProduct" src='' alt="Product Image" width="40%">
         <h2 id="priceProduct">price</h2>
         <h2 id="colourText">Colour: </h2><h2 id="colourProduct">product colour</h2>
         <p id="descProduct">description of product</p>
         <button class="addToBagBtn" onclick="addToCartFromItem(this)">Add to Cart</button>
-    </div>
+    </section>
 
 
 <!-- Footer -->
@@ -106,7 +106,6 @@ Email: EASells@uclan.ac.uk
                 </a>
             </div>
         </div>
-    </div>
     </footer>
 
 
@@ -134,18 +133,18 @@ Email: EASells@uclan.ac.uk
             var ID = sessionStorage.getItem("itemToView");
 
             var cartList = [];
-            cartList = sessionStorage.getItem("shoppingBag");
+            cartList = localStorage.getItem("shoppingBag");
 
             //If there are already items in the cart
             if (cartList != null)
             {
                 cartList = cartList + "," + ID;
-                sessionStorage.setItem("shoppingBag", cartList);
+                localStorage.setItem("shoppingBag", cartList);
             } 
             //if cart is empty - add straight away
             else
             {
-                sessionStorage.setItem("shoppingBag", ID);
+                localStorage.setItem("shoppingBag", ID);
             }
 
             //message to user that item has been added
@@ -192,22 +191,17 @@ Email: EASells@uclan.ac.uk
             document.getElementById("imageProduct").src = "resources/" + itemDetails[4];
         }
     
-    
-        addItemDetails();
-
+        // returns to product page
         function backToPage()
         {
-            // let height = sessionStorage.getItem("scrollHeight");
-            // console.log("height = ", height)
-
             // go to product page
             window.open("products.html", "_self");
-
-            // var productsPage = window.open("products.html", "_self");
-            // productsPage.onload(window.scrollTo(0,height));
-
         }
     
+        // main
+        // calls function
+        addItemDetails();
+
     </script>
 </body>
 </html>
