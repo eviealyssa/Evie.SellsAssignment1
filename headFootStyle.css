@@ -50,7 +50,9 @@ header {
     padding-top: 1%; 
 }
 
-
+.topNavBar a.mobileMenuIcon:hover {
+    opacity: 0.7;
+}
 
 /* css for footer */
 footer {
@@ -237,10 +239,6 @@ footer {
         margin-right: 2%;
         text-decoration: none;
         grid-column: 1;
-    }
-    
-    #emailAddress {
-        color: #C7CBDA;
     }
     
     .FindSU {

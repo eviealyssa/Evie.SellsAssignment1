@@ -1,43 +1,116 @@
 # Evie.SellsAssignment1 - UCLAN Student Shop 
-## Evie Sells
-## Reg No. 21255921
-## Email: EASells@uclan.ac.uk
+Evie Sells
+Reg No. 21255921 
+Email: EASells@uclan.ac.uk
 
-## Index Page
-The index or home page of my project has been implmented with multiple features to 
+## Applied To All Pages
+### Navigation  Bar
+contains links to the following pages:
+-	Home
+-	Products 
+-	Cart
+The navigation bar is fully responsive – it changes from a full menu to a hamburger menu when  the screen size is below 768px.  When this happens, the links are hidden and are only shown when the hamburger icon is clicked. In addition, the shopping cart icon is hidden, and a worded link is displayed instead.
 
-### Features and Resources Used
+Other functions of the navigation bar include the current page being underlined, as well as the other page links being underlined when hovered over.
+
+#### Resources used:
+##### Hamburger Navigation
+https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 
 
-### Wider Reading / Resources Used
+### Footer
+The footer contains important details for the assignment, as well as contact information of the student union and the creator.
+
+The footer utilises a grid to layout the different components, this grid is dynamic and changes column size depending on the size of the web page.
+
+In addition,  the social media icons act as links to the relevant student union social media.
+
+#### Resources used:
+##### CSS Grid Layout Module
+https://www.w3schools.com/css/css_grid.asp 
+
+
+
+
+### Resources Used By The Whole Project
+#### How to Turn an Image into a Link in HTML?
+https://www.geeksforgeeks.org/how-to-turn-an-image-into-a-link-in-html/
+
+#### Opacity Property
+https://www.w3schools.com/cssref/css3_pr_opacity.php 
 
 #### Media Queries
-https://www.w3schools.com/cssref/atrule_media.php
+https://www.w3schools.com/cssref/atrule_media.php 
 
+#### HTML Semantic Elements
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+#### Difference Between Local Storage, Session Storage And Cookies
+https://www.geeksforgeeks.org/difference-between-local-storage-session-storage-and-cookies/
+
+
+
+
+
+## Index / Home Page
+
+### Resources Used
 #### IFrame
 https://www.w3schools.com/html/html_iframe.asp
 
 #### Video Tag
 https://www.w3schools.com/html/html5_video.asp
 
-#### Hamburg Navigation
-https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
-
+#### University of Central Lancashire
+https://en.wikipedia.org/wiki/University_of_Central_Lancashire
 
 
 
 
 ## Products Page
 
-### Wider Reading / Resources Used
+### Resources Used
+#### Scroll to the top of the page using JavaScript/jQuery
 https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jquery/
 
-#### Product Page
+#### CSS Flexbox Layout Guide
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
 
-### Process behind page
+
 
 
 
 ## Item Page
-https://www.tutorialspoint.com/how-do-i-call-a-javascript-function-on-page-load
-https://www.w3schools.com/jsref/met_win_scrollto.asp
+
+### Resources Used
+#### How do I call a JavaScript function on page load?
+https://www.tutorialspoint.com/how-do-i-call-a-javascript-function-on-page-load 
+
+#### Window scrollTo()
+https://www.w3schools.com/jsref/met_win_scrollto.asp 
+
+
+
+
+## Cart Page
+
+### Resources Used
+#### HTML DOM offsetHeight Property
+https://www.geeksforgeeks.org/html-dom-offsetheight-property/
+
+#### JavaScript parseFloat()
+https://www.w3schools.com/jsref/jsref_parsefloat.asp
+
+#### How to parse float with two decimal places in javascript?
+https://stackoverflow.com/questions/4435170/how-to-parse-float-with-two-decimal-places-in-javascript
+
+#### Remove a Character From String in JavaScript
+https://www.geeksforgeeks.org/how-to-remove-a-character-from-string-in-javascript/
+
+
+
+## README
+
+### Resources Used
+#### Make a README
+https://www.makeareadme.com/#name 
