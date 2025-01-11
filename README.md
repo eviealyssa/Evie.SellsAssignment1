@@ -9,6 +9,7 @@ contains links to the following pages:
 -	Home
 -	Products 
 -	Cart
+
 The navigation bar is fully responsive – it changes from a full menu to a hamburger menu when  the screen size is below 768px.  When this happens, the links are hidden and are only shown when the hamburger icon is clicked. In addition, the shopping cart icon is hidden, and a worded link is displayed instead.
 
 Other functions of the navigation bar include the current page being underlined, as well as the other page links being underlined when hovered over.
@@ -51,8 +52,14 @@ https://www.geeksforgeeks.org/difference-between-local-storage-session-storage-a
 
 
 
-
 ## Index / Home Page
+The index page is split into 3 main sections using semantic elements.
+
+Section 1 displays the title and a brief welcome to the webite.
+
+Section 2 displays a Mp4 video and a small paragraph about attending an open day. The video content is embedded using an '<iframe>'. In addition, there is a link which will take the user to the following website when clicked. https://www.uclan.ac.uk/open-days. This page outlines the open days of the university.
+
+Section 3 displays a YouTube video which has been embedded using an '<iframe>'. This section also contains a brief discription about Preston, as well as a lik to the following page. https://www.uclan.ac.uk/campuses/preston. This page describes the Preston Campus.
 
 ### Resources Used
 #### IFrame
@@ -61,7 +68,7 @@ https://www.w3schools.com/html/html_iframe.asp
 #### Video Tag
 https://www.w3schools.com/html/html5_video.asp
 
-#### University of Central Lancashire
+#### University of Central Lancashire Information
 https://en.wikipedia.org/wiki/University_of_Central_Lancashire
 
 

@@ -47,43 +47,56 @@ Email: EASells@uclan.ac.uk
     </header>
 
 <!-- Main -->
-    <h1>Welcome to UCLan's Student Union Shop</h1>
+    <section>
+        <h1>Welcome to UCLan's Student Union Shop</h1>
+        <p id="homeText">
+            Browse UCLan's official branded merchandise.
+            <br>
+            Elevate your looks with branded apparel, crafted for comfort and style.
+        </p>
+    </section>
     
-    <section class="homeSection1">
-        <div class="homeSection1Video ">
-            <div class="welcomeVideoMp4">
-                <video width="40%" controls="controls" style="border-radius: 1.2em;" >
-                    <source src= 'resources/video/video.mp4' type="video/mp4" />
-                </video>
+    <div class="breakPoint"></div>
+    
+
+    <h1>Discover UCLan</h1>
+
+    <section id="homeSection1">
+        <div class="homeSection1VideoContainer ">
+            <div id="welcomeVideoMp4">
+                <iframe width="40%" height="320px%" allowfullscreen style="border-radius: 1.2em; border:none"
+                    src= 'resources/video/video.mp4' type="video/mp4">
+                </iframe>
             </div>
         </div>
         
-        <div class="homeSection1Text">
-            <h2>Discover your pasion</h2>
+        <div id="homeSection1Text">
+            <h2>Discover your passion</h2>
             <h3>Attend an open day </h3>
             <p>An Open Day gives you the chance to visit a campus in person. You can get a feel for the place and meet current students and staff. 
                 It's the perfect way to get a taste of university life.
+                <br>
+                <a href="https://www.uclan.ac.uk/open-days" target="_blank" >Register now</a>
             </p>
-            <a href="https://www.uclan.ac.uk/open-days" target="_blank" >Register now</a>
-            <br>
         </div>
     </section>
 
     <div class="breakPoint"></div>
 
-    <section class="homeSection2">
-        <div class="homeSection2Text ">
+    <section id="homeSection2">
+        <div id="homeSection2Text">
             <h2>About Preston</h2>
             <h3>Discover your new home</h3>
             <p>Hidden gems, the natural beauty of the great outdoors, vibrant nightlife and foodie culture. 
-                Whatever you’re looking for, it’s all waiting for you here in Preston.</p>
+                Whatever you’re looking for, it’s all waiting for you here in Preston.
+                <br>
                 <a href="https://www.uclan.ac.uk/campuses/preston" target="_blank" >Find Out More</a>
-            <br>
+            </p>
         </div>
 
-        <div class="homeSection2Video">
-            <div class="welcomeVideoYT">
-                <iframe width="70%" height="320px" allowfullscreen style="border-radius: 2em; border:none"
+        <div class="homeSection2VideoContainer ">
+            <div id="welcomeVideoYT">
+                <iframe width="70%" height="320px" allowfullscreen style="border-radius: 1.2em; border:none"
                     src="https://youtube.com/embed/EI_lco-qdw8">
                 </iframe>
             </div>
@@ -95,26 +108,34 @@ Email: EASells@uclan.ac.uk
 <!-- Footer -->
     <footer>
         <div class="contactInfo">
-            <h2>Contact Info:</h2>
-            <p>Name: Evie Sells</p>
-            <p>Email: <a id="emailAddress" href="mailto:EASells@uclan.ac.uk">EASells@uclan.ac.uk</a></p>
-            <p>Reg.No: 21255921</p>
+            <h2 class="footH2">Contact Info:</h2>
+            <p class="footP">
+                Name: Evie Sells
+                <br>
+                Email: <a id="emailAddress" href="mailto:EASells@uclan.ac.uk">EASells@uclan.ac.uk</a>
+                <br>
+                Reg.No: 21255921</p>
         </div>
 
         <div class="assignmentDetails">
-            <h2>Details:</h2>
-            <p>CO1707: Web Technologies</p>
-            <p>Assignment 1: Web Application</p>
+            <h2 class="footH2">Details:</h2>
+            <p class="footP">
+                CO1707: Web Technologies
+                <br>
+                Assignment 1: Web Application
+            </p>
         </div>
 
         <div class="FindSU">
-            <h2>Find the SU:</h2>
-            <p>University of Central Lancashire Students' Union,</p>
-            <p>Fylde Road, Preston. PR1 7BY</p>
+            <h2 class="footH2">Find the SU:</h2>
+            <p class="footP">University of Central Lancashire Students' Union,
+                <br>
+                Fylde Road, Preston. PR1 7BY
+            </p>
         </div>
 
         <div class="socialMediaIcons">
-            <h2>Stay in touch with the SU!</h2>
+            <h2 class="footH2">Stay in touch with the SU!</h2>
 
             <div class="iconsFooter">
                 <a href="https://www.facebook.com/uclanstudentsunion/">

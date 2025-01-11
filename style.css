@@ -20,17 +20,16 @@ h1 {
 }
 
 /* css for body -- index page*/
-.welcomeVideoMp4 {
+#homeText {
+    text-align: center;
+}
+
+#welcomeVideoMp4 {
     width: 250%;
     float: inline-start;
 }
 
-.welcomeVideoYT {
-    width: 140%;
-    float: inline-start;
-}
-
-.homeSection1 {  
+#homeSection1 {  
     display: flex;
     flex-wrap: wrap;
     margin: 1%; 
@@ -41,37 +40,56 @@ h1 {
     box-shadow: 5px 10px #cbcaca;
 }
 
-.homeSection1Video {
+.homeSection1VideoContainer {
     flex: 60%;
     border-radius: 2em;
     padding: 1em;
 }
 
-.homeSection1Text {
+#homeSection1Text {
     flex: 40%;
     padding: 1em;
 }
 
-.homeSection2 {  
+
+
+
+
+
+
+#welcomeVideoYT {
+    width: 140%;
+    float: inline-start;
+}
+
+#homeSection2 {  
     display: flex;
     flex-wrap: wrap;
     margin: 1%; 
     border-radius: 2em;
-    border: 3px solid #34516C;
+    border:3px solid #34516C;
+    height: auto;
+    background-color: rgb(52, 81, 108, 0.5);  /* primary grey set at 50% transparany */
     box-shadow: 5px 10px #cbcaca;
 }
 
-.homeSection2Text {
-    flex: 40%;
-    background-color:  rgb(87, 122, 155, 0.5);  /* slate set at 50% transparany */
+.homeSection2VideoContainer {
+    flex: 60%;
+    border-radius: 2em;
     padding: 1em;
 }
 
-.homeSection2Video {
-    flex: 60%;
-    background-color:  rgb(87, 122, 155, 0.5);  /* slate set at 50% transparany */
+#homeSection2Text {
+    flex: 40%;
     padding: 1em;
 }
+
+
+
+
+
+
+
 
 
 
@@ -301,15 +319,27 @@ h1 {
 @media screen and (max-width: 768px) {
     /* css for all */
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.7em;    
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.3em;
     }
 
     /* css for index page */
-    .homeSection1 {
+    #homeSection1 {
         flex-direction: column;
     }
 
-    .homeSection2 {
+    #homeSection2 {
         flex-direction: column;
     }
 
@@ -343,6 +373,18 @@ h1 {
         font-size: 3em;
     }
 
+    h2 {
+        font-size: 1.9em;    
+    }
+
+    h3 {
+        font-size: 1.7em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
     /* css for item page */
     #descProduct {
         font-size: 1.5em;
@@ -372,6 +414,27 @@ h1 {
     /* css for all */
     h1 {
         font-size: 4em;
+    }
+
+    h2 {
+        font-size: 2.4em;    
+    }
+
+    h3 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1.8em;
+    }
+
+    /* css for index page */
+    #homeSection1 {
+        flex-direction: row;
+    }
+
+    #homeSection2 {
+        flex-direction: row;
     }
     
     /* css for item page */
