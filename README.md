@@ -65,16 +65,16 @@ Section 3 displays a YouTube video which has been embedded using an '<iframe>'. 
 #### IFrame
 https://www.w3schools.com/html/html_iframe.asp
 
-#### Video Tag
-https://www.w3schools.com/html/html5_video.asp
-
 #### University of Central Lancashire Information
 https://en.wikipedia.org/wiki/University_of_Central_Lancashire
 
 
 
 
-## Products Page
+## Products Page ---- NOT COMPLETED
+This page contains information of all of the available products in the shop. 
+
+Each product is contained in a product card, which displays the image, name, price and colour of each item.  There is also a read more link, which when clicked gets the id of the item and stores it in session storage. Moreover 
 
 ### Resources Used
 #### Scroll to the top of the page using JavaScript/jQuery
@@ -86,8 +86,16 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
 
+## Item Page ---- NOT COMPLETED
+PRODUCT CONTAINER
+The product container displays the item on the page. Details of the item such as its image, name, price, colour and description are also shown. The program iterates through each item in each 
 
-## Item Page
+ADD TO CART
+
+BACK TO PAGE
+
+FILLER BOX
+
 
 ### Resources Used
 #### How do I call a JavaScript function on page load?
@@ -99,7 +107,17 @@ https://www.w3schools.com/jsref/met_win_scrollto.asp
 
 
 
-## Cart Page
+## Cart Page ---- NOT COMPLETED
+
+ITEM CART CONTAINER
+
+TOTAL PRICE
+
+BAG EMPTY MESSAGE
+
+FILLER BOX
+
+
 
 ### Resources Used
 #### HTML DOM offsetHeight Property
@@ -116,7 +134,8 @@ https://www.geeksforgeeks.org/how-to-remove-a-character-from-string-in-javascrip
 
 
 
-## README
+
+## README ---- NOT COMPLETED
 
 ### Resources Used
 #### Make a README

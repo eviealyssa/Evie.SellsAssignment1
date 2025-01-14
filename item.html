@@ -23,7 +23,8 @@ Email: EASells@uclan.ac.uk
     <title>Evie Sells - UCLan Shop</title>
 </head>
 
-<body>
+<!-- when screen size is changed - function is called -->
+<body onresize="changeFillerSize()">
     <header>
         <nav>
             <!-- navigation bar -->
@@ -50,8 +51,7 @@ Email: EASells@uclan.ac.uk
 
     </header>
 
-<!-- Main -->
-
+    <!-- Main -->
     <button id="backToPageBtn" onclick="backToPage()">Back</button>
 
     <section class="itemPageContainer">
@@ -63,7 +63,8 @@ Email: EASells@uclan.ac.uk
         <button class="addToBagBtn" onclick="addToCartFromItem(this)">Add to Cart</button>
     </section>
 
-
+    <!-- fills out the page -->
+    <div id="fillerBox"></div>
     <!-- Footer -->
     <footer>
         <div class="contactInfo">
@@ -154,7 +155,6 @@ Email: EASells@uclan.ac.uk
             {
                 localStorage.setItem("shoppingBag", ID);
             }
-
             //message to user that item has been added
             alert("Item added to cart");
         }
@@ -197,6 +197,8 @@ Email: EASells@uclan.ac.uk
             document.getElementById("descProduct").innerHTML = itemDetails[2];
             document.getElementById("priceProduct").innerHTML = itemDetails[3];
             document.getElementById("imageProduct").src = "resources/" + itemDetails[4];
+
+            changeFillerSize();
         }
     
         // returns to product page
@@ -205,11 +207,54 @@ Email: EASells@uclan.ac.uk
             // go to product page
             window.open("products.html", "_self");
         }
-    
-        // main
-        // calls function
-        addItemDetails();
 
+        // changes size of filler box - fills out the page so footer is always
+        function changeFillerSize()
+        {
+            // gets page height
+            var pageSize = window.innerHeight;
+            console.log("pageSize size = ", pageSize, "px");
+
+            // gets header height
+            var headHeight= 0;
+            const headerHeight = document.getElementsByClassName("topNavBar");
+            for (let i = 0; i < headerHeight.length; i++) {
+                let temp = headerHeight[i].offsetHeight;
+                headHeight = headHeight + temp;
+            }
+            console.log("headHeight size = ", headHeight, "px");
+
+            // gets content height
+            var contentHeight= 0;
+            const itemContainer = document.getElementsByClassName("itemPageContainer");
+            for (let i = 0; i < itemContainer.length; i++) {
+                let temp = itemContainer[i].offsetHeight;
+                contentHeight = contentHeight + temp;
+            }
+            console.log("contentHeight size = ", contentHeight, "px");
+
+            // gets footer height
+            var footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
+            console.log("footer size = ", footerHeight, "px");
+
+            // calcualtes what needs to be subtracted from the page
+            var toTake = contentHeight + footerHeight + headHeight;
+            console.log("toTake size = ", toTake);
+
+            // calculate the height that filler box needs to be
+            var fillerBoxSize = pageSize - toTake;
+
+            // if filler box size is greater than 0, set it to that size
+            if (fillerBoxSize > 0){
+                console.log("filler box size = ", fillerBoxSize, "px");
+                document.getElementById("fillerBox").style.height = fillerBoxSize + "px";
+            }
+            console.log("");
+        }
+    
+        // main -- calls functions
+        addItemDetails();
+        changeFillerSize();  //ensures footer is always at the bottom of the page
     </script>
 </body>
 </html>

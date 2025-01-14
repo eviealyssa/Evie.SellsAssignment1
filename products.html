@@ -23,7 +23,7 @@ Email: EASells@uclan.ac.uk
     <title>Evie Sells - UCLan Shop - Product Page</title>
 </head>
 
-<!-- scrolls to heigt stored in session storage on opening -->
+<!-- scrolls to height stored in session storage on opening -->
 <body onload="scrollToHeight()">
     <header>
         <nav>
@@ -48,7 +48,6 @@ Email: EASells@uclan.ac.uk
                 <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
             </div>
         </nav>
-
     </header>
 
 <!-- Main -->
@@ -153,19 +152,21 @@ Email: EASells@uclan.ac.uk
             }
         }
 
-        // sets scroll heigt to 0,0
+        // sets scroll height to 0,0
         function scrollToTop() //https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jquery/
         {
             sessionStorage.setItem("scrollHeight", 0);
             window.scrollTo(0,0);
         }
 
-
+        // adds each product to the page
         function addProductsToPage(productType, productArray, productContainer)
         {
+            // gets the product container, and the template product card
             const productList = document.getElementById(productContainer);
             const product = document.querySelector(".productCard");
 
+            // searches through the identified array 
             for (i=0; i < productArray.length; ++i)
             {
                 let productCopy = product.cloneNode(true); //may need to be var instead of let
