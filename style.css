@@ -22,22 +22,31 @@ h1 {
 /* css for body -- index page*/
 #homeText {
     text-align: center;
+    background-color: rgb(87, 122, 155, 0.6);
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 3%;
+    padding: 5%;
+    border-radius: 1.2em; 
+    border: solid rgb(87, 122, 155, 0.8);
 }
 
 #welcomeVideoMp4 {
-    width: 250%;
+    width: 100%;
     float: inline-start;
+    border-radius: 1.2em; 
+    border:none;
 }
 
 #homeSection1 {  
     display: flex;
     flex-wrap: wrap;
-    margin: 1%; 
+    margin: 4%; 
     border-radius: 2em;
     border:3px solid #34516C;
     height: auto;
     background-color: rgb(52, 81, 108, 0.5);  /* primary grey set at 50% transparany */
-    box-shadow: 5px 10px #cbcaca;
 }
 
 .homeSection1VideoContainer {
@@ -53,24 +62,21 @@ h1 {
 
 
 
-
-
-
-
 #welcomeVideoYT {
-    width: 140%;
+    width: 100%;
     float: inline-start;
+    border-radius: 1.2em; 
+    border: none;
 }
 
 #homeSection2 {  
     display: flex;
     flex-wrap: wrap;
-    margin: 1%; 
+    margin: 4%; 
     border-radius: 2em;
     border:3px solid #34516C;
     height: auto;
     background-color: rgb(52, 81, 108, 0.5);  /* primary grey set at 50% transparany */
-    box-shadow: 5px 10px #cbcaca;
 }
 
 .homeSection2VideoContainer {
@@ -412,19 +418,19 @@ h1 {
 @media screen and (min-width: 1025px) {    
     /* css for all */
     h1 {
-        font-size: 4em;
+        font-size: 3.5em;
     }
 
     h2 {
-        font-size: 2.4em;    
+        font-size: 2.2em;    
     }
 
     h3 {
-        font-size: 2.2em;
+        font-size: 2.0em;
     }
 
     p {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     /* css for index page */

@@ -7,14 +7,10 @@
     box-sizing: border-box;
 }
 
-body {
-    min-width: 355px;
-}
-
 /* nav bar */
 nav {
     width: 100%;
-    height: auto;
+    height: 80px;
     position: sticky;
     background-color: #919CAD; /* Silver from colour palette */
 }
@@ -24,12 +20,14 @@ nav {
     padding-right: 25px;
     padding-top: 5px;
     float: left;
+    height: 15%;
 }
 
 /* navigation links container */
 .navLinksList {
     position: relative;
     list-style-type: none;
+    /* display: inline-flex; */
     padding: 20px;
 }
 
@@ -39,7 +37,7 @@ nav {
     text-decoration: none;
     font-size: 1.65em;
     font-weight: 480;
-    padding-right: 15px;
+    padding: 10px;
     color: white;
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
 }
@@ -114,7 +112,7 @@ footer {
     .mobileNavLinksList {
         display: inline-table;
         width: 100%;
-        /* margin-top: 20px; */
+        margin-top: 8px;
         font-size: 0.85em;
         padding: 10px;
         background-color: rgb(52, 81, 108);
@@ -180,7 +178,7 @@ footer {
 
     /* hides navigation for mobile */
     #mobileNavSection {
-        display: none !important;
+        display: none;
     }
 
     .navLinksList {
@@ -200,6 +198,7 @@ footer {
     /* hides navigation for mobile - shown when hamburger icon is clicked*/
     #mobileNavSection {
         display: none;
+        position: absolute;
     }
 
 
@@ -237,7 +236,7 @@ footer {
 
     /* hides navigation for mobile */
     #mobileNavSection {
-        display: none !important;
+        display: none;
     }
 
     .navLinksList {

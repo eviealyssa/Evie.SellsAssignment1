@@ -18,6 +18,9 @@ Other functions of the navigation bar include the current page being underlined,
 ##### Hamburger Navigation
 https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 
+#### Override inline css
+https://stackoverflow.com/questions/32522276/how-to-override-applied-css-rules-in-media-queries 
+
 
 ### Footer
 The footer contains important details for the assignment, as well as contact information of the student union and the creator.

@@ -25,29 +25,45 @@ Email: EASells@uclan.ac.uk
 
 <!-- when screen size is changed - function is called -->
 <body onresize="changeFillerSize()">
-    <header>
+    <header> 
+        <!-- Semantic Element
+         Semantic elements clearly states what the content is, they are used to clearly define the parts of the web page.
+         For example header and nav. These tell both the browser and developer exactly what that section is for.        
+        -->
+
+         <!-- navigation bar -->
         <nav>
-            <!-- navigation bar -->
-            <div class="topNavBar">
-                <!-- adding in logo -->
-                <div class="logo">
-                    <img src="resources/images/logo.svg" alt="UCLan logo" height="65rem" >
-                </div>
-
-                <!-- adding in hamburg menu icon for mobile users -->
-                <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40px"></a>
-
-                <!-- links for page navigation -->
-                <li id="navLinks">
-                    <a href="index.html" target="_self">Home</a>
-                    <a href="products.html" target="_self" >Products</a>
-                    <a href="cart.html" target="_self" id="cartText" class="activePage">Cart</a> <!-- id allows to hide/display cart text -->
-                </li>
-
-                <!-- cart menu icon for desktop / tablet -->
-                <a href="cart.html" id="cartIcon" class="splitNav"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40px"></a>
+             <!-- adding in logo -->
+            <div class="logo">
+                <img src="resources/images/logo.svg" alt="UCLan logo" height="65" >
             </div>
+
+            <div id="navSection">
+                <ul class="navLinksList">
+                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
+                    <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
+                </ul>
+            </div>
+
+            <!-- cart menu icon for desktop / tablet -->
+            <a href="cart.html" class="splitNav cartNavIcon"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="50"></a>
+
+            <!-- adding in hamburg menu icon for mobile users -->
+            <a class="mobileMenuIcon splitNav" onclick="toggleHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="50"></a>
+
+            <!-- mobile navigation links -->
+            <div id="mobileNavSection">
+                <ul class="mobileNavLinksList">
+                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
+                    <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
+                    <li><a href="cart.html" target="_self" class="navLinks">Cart</a></li> 
+                </ul>
+            </div>           
         </nav>
+
+        <!-- header -- title -->
+        <h1>Your Shopping Bag</h1>
+        
     </header>
 
     <!-- Main -->
@@ -121,19 +137,19 @@ Email: EASells@uclan.ac.uk
 
             <div class="iconsFooter">
                 <a href="https://www.facebook.com/uclanstudentsunion/">
-                    <img src='resources/images/social media icons/facebook-social-media-icon.svg' alt="Facebook icon" height="40">
+                    <img src='resources/images/social_media_icons/facebook-social-media-icon.svg' alt="Facebook icon" height="40">
                 </a>
-
+    
                 <a href="https://www.tiktok.com/@uclansu">
-                    <img src='resources/images/social media icons/tiktok-social-media-icon.svg' alt="TikTok icon" height="40">
+                    <img src='resources/images/social_media_icons/tiktok-social-media-icon.svg' alt="TikTok icon" height="40">
                 </a>
-
+    
                 <a href="https://www.instagram.com/uclansu/">
-                    <img src='resources/images/social media icons/instagram-social-media-icon.svg' alt="Instagram icon" height="40">
+                    <img src='resources/images/social_media_icons/instagram-social-media-icon.svg' alt="Instagram icon" height="40">
                 </a>
-
+    
                 <a href="https://x.com/i/flow/login?redirect_after_login=%2FUCLanSU">
-                    <img src='resources/images/social media icons/x-social-media-black-icon.svg' alt="X icon" height="40">
+                    <img src='resources/images/social_media_icons/x-social-media-black-icon.svg' alt="X icon" height="40">
                 </a>
             </div>
         </div>
@@ -141,17 +157,17 @@ Email: EASells@uclan.ac.uk
 
     <script>
          // Open / Close hamburger navigation function
-         function openHamburgerNav()
+        function toggleHamburgerNav()
         {
-            // get navLink and set as linksNav
-            var linksNav = document.getElementById("navLinks");
+            // get navSection and set as linksNav
+            var navigationSection = document.getElementById("mobileNavSection");
             // If nav shown, hide
-            if (linksNav.style.display === "inline-table") {
-                linksNav.style.display = "none";
+            if (navigationSection.style.display === "block") {
+                navigationSection.style.display = "none";
             } 
             // If nav hidden, show
             else {
-                linksNav.style.display = "inline-table";
+                navigationSection.style.display = "block";
             }
         }
 
@@ -301,7 +317,7 @@ Email: EASells@uclan.ac.uk
         function openProductsPage()
         {
             //sets scroll height to 0 -- for products page
-            sessionStorage.setItem("scrollHeight", 0);
+            sessionStorage.setItem("scrollHeightPP", 0);
             // opens product page
             window.open('products.html', '_self');
         }
@@ -430,6 +446,7 @@ Email: EASells@uclan.ac.uk
             window.open(href="cart.html", target="_self");
 
         }
+        
         
         function changeFillerSize()
         {
