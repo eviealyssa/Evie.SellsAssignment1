@@ -10,12 +10,12 @@ Email: EASells@uclan.ac.uk
 
 <head>
     <!-- link to the stylesheets -->
-    <link rel="stylesheet" href="style.css" type= "text/css">
+    <link rel="stylesheet" href="styling/style.css" type= "text/css">
 
-    <link rel="stylesheet" href="headFootStyle.css" type= "text/css">
+    <link rel="stylesheet" href="styling/headFootStyle.css" type= "text/css">
 
     <!-- embed products array into file -->
-    <script src="./resources/product-array.js"></script>
+    <script src="resources/product-array.js"></script>
 
     <!-- setting up project -->
     <meta charset="UTF-8">
@@ -40,8 +40,8 @@ Email: EASells@uclan.ac.uk
 
             <div id="navSection">
                 <ul class="navLinksList">
-                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
-                    <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
+                    <li><a href="index.html" target="_self" class="navLinks">Home</a></li>
+                    <li><a href="products.html" target="_self" class="navLinks activePage">Products</a></li>
                 </ul>
             </div>
 
@@ -54,48 +54,53 @@ Email: EASells@uclan.ac.uk
             <!-- mobile navigation links -->
             <div id="mobileNavSection">
                 <ul class="mobileNavLinksList">
-                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
-                    <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
+                    <li><a href="index.html" target="_self" class="navLinks">Home</a></li>
+                    <li><a href="products.html" target="_self" class="navLinks activePage">Products</a></li>
                     <li><a href="cart.html" target="_self" class="navLinks">Cart</a></li> 
                 </ul>
             </div>           
         </nav>
 
-        <!-- header -- title -->
+        <!-- header - title -->
         <h1>Products</h1>
-        
     </header>
 
-<!-- Main -->
-    <div class="breakPoint"></div>
+<!-- Main - semantic element to clearly define sections of the page -->
+    <main>
+        <div class="breakPoint"></div>
 
-    <!-- scroll to top button -->
-     <button id="scrollToTopBtn" onclick="scrollToTop()">To Top</button>
+        <!-- scroll to top button -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">To Top</button>
 
-    <h1>Tshirts</h1>
-    <!-- product card template & products containers -->
-    <div id="tshirtContainer">
-        <div class="productCard">
-            <img class="productImage" src='' alt="Product Image" width="50%" onclick="viewItem(this)">
-            <h1 class="productName">name</h1>
-            <h3 class="productPrice">price</h3>
-            <p class="productDescription">description</p>
-            <a class="readMoreLink" onclick="viewItem(this)">Read more...</a>
-            <button class="addToBagBtn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
- 
-    <div class="breakPoint"></div>
+        
+        <!-- product card template & tshirt container -->
+        <section id="tshirtContainer">
+            <h2 class="h2Title productContainerTitle">Tshirts</h2>
 
-    <h1>Hoodies</h1>
+            <div class="productCard">
+                <img class="productImage" src='temp' alt="Product Image" width="100" onclick="viewItem(this)">
+                <h2 class="productName">name</h2>
+                <h3 class="productPrice">price</h3>
+                <p class="productDescription">description</p>
+                <a class="readMoreLink" onclick="viewItem(this)">Read more...</a>
+                <button class="addToBagBtn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </section>
+    
+        <div class="breakPoint"></div>
+        <div class="breakPoint"></div>
 
-    <div id="hoodyContainer"></div>
+        <!-- container for hoody products -->
+        <section id="hoodyContainer"><h2 class="h2Title productContainerTitle">Hoodies</h2></section>
 
-    <div class="breakPoint"></div>
+        <div class="breakPoint"></div>
+        <div class="breakPoint"></div>
 
-    <h1>Jumpers</h1>
+        <!-- container for jumper products -->
+        <section id="jumperContainer"><h2 class="h2Title productContainerTitle">Jumpers</h2></section>
 
-    <div id="jumperContainer"></div>
+        <div class="breakPoint"></div>
+    </main>
 
 
     <!-- Footer -->
@@ -168,12 +173,14 @@ Email: EASells@uclan.ac.uk
             }
         }
 
+
         // sets scroll height to 0,0
-        function scrollToTop() //https://www.geeksforgeeks.org/scroll-to-the-top-of-the-page-using-javascript-jquery/
+        function scrollToTop()
         {
             sessionStorage.setItem("scrollHeightPP", 0);
             window.scrollTo(0,0);
         }
+
 
         // adds each product to the page
         function addProductsToPage(productType, productArray, productContainer)
@@ -182,10 +189,10 @@ Email: EASells@uclan.ac.uk
             const productList = document.getElementById(productContainer);
             const product = document.querySelector(".productCard");
 
-            // searches through the identified array 
+            // searches through the identified array and populates fields
             for (i=0; i < productArray.length; ++i)
             {
-                let productCopy = product.cloneNode(true); //may need to be var instead of let
+                let productCopy = product.cloneNode(true);
                 productList.appendChild(productCopy);
                 var productID = productType + "ID" + i;
                 productCopy.id = productID;
@@ -203,9 +210,12 @@ Email: EASells@uclan.ac.uk
 
         addProductsToPage('jumpers', jumpers, 'jumperContainer');
 
+
         //hide the orginal/template product card in each section
         document.querySelector(".productCard").style.display = "none";
 
+        // shows the item page - a larger view of the selected item
+        // acessed by clicking on the item image or the read more link in the product card
         function viewItem(elm)
         {
             //gets the parent (productCard) of the button
@@ -225,6 +235,7 @@ Email: EASells@uclan.ac.uk
         }
 
 
+        // adds item to the shopping cart
         function addToCart(elm)
         {
             //gets the parent (productCard) of the button
@@ -253,9 +264,10 @@ Email: EASells@uclan.ac.uk
             alert("Item added to cart");
         }
 
-
+        // allows product page to load at the same point (height) the item was selected
         function scrollToHeight()
         {
+            // gets height value from storage
             let yValue = sessionStorage.getItem("scrollHeightPP");
             window.scrollTo(0,yValue);
         }

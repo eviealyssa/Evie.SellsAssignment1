@@ -15,6 +15,17 @@ h1 {
     color: #34516C;    
 }
 
+.h2Title {
+    text-align: center;
+    color: rgb(52, 81, 108, 0.87);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
 .breakPoint {
     margin: 2%;
 }
@@ -128,7 +139,7 @@ h1 {
   }
   
 .productPrice {
-    color: grey;
+    color:#34516C;
     font-size: 1.2em;
 }
 
@@ -148,7 +159,6 @@ h1 {
     color: white;
     background-color: #34516C;
     text-align: center;
-    cursor: pointer;
     width: 100%;
     font-size: 1em;
 }
@@ -157,17 +167,25 @@ h1 {
     opacity: 0.7;
 }
 
+.productCard .productImage {
+    width: 50%;
+}
+
 .productCard .productImage:hover {
     opacity: 0.5;
 }
 
 .readMoreLink {
     font-size: 0.9em;
-    padding: auto;
+    padding: 2px;
 }
 
 .readMoreLink:hover {
     text-decoration: underline;
+}
+
+.productContainerTitle {
+    width: 100%;
 }
 
 #tshirtContainer {
@@ -245,7 +263,9 @@ h1 {
 
 .itemCartImage {
     grid-column: 1;
+    margin: auto;
 }
+
 .itemCartCard .itemCartImage:hover {
     opacity: 0.5;
 }
@@ -261,11 +281,21 @@ h1 {
     display: flex;
     flex-direction: column;
     grid-column: 3;
+    margin: auto;
 }
 
 .quantityBtns {
     display: inline;
     justify-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.quantBtn {
+    font-size: 1.5em;
+    padding: 2px;
+    width: 30px;
+
 }
 
 .itemCartName {
@@ -291,6 +321,8 @@ h1 {
 .itemCartQuantityInfo {
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #bagEmptyBtn {
@@ -324,15 +356,19 @@ h1 {
 @media screen and (max-width: 768px) {
     /* css for all */
     h1 {
-        font-size: 2.2em;
+        font-size: 2.1em;
+    }
+
+    .h2Title {
+        font-size: 1.9em;
     }
 
     h2 {
-        font-size: 1.7em;    
+        font-size: 1.6em;    
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     p {
@@ -369,13 +405,21 @@ h1 {
         font-size: 1.3em;
     }
 
+    /* css for cart page */
+    .itemCartImage {
+        width: 160px;
+    }
 }
 
    /* css for tablet version */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
     /* css for all */
     h1 {
-        font-size: 3em;
+        font-size: 2.6em;
+    }
+
+    .h2Title {
+        font-size: 2.4em;
     }
 
     h2 {
@@ -411,7 +455,10 @@ h1 {
         font-size: 1.7em;
     }
 
-
+    /* css for cart page */
+    .itemCartImage {
+        width: 210px;
+    }
 }
 
   /* css for desktop version */
@@ -421,16 +468,20 @@ h1 {
         font-size: 3.5em;
     }
 
+    .h2Title {
+        font-size: 3em;
+    }
+
     h2 {
         font-size: 2.2em;    
     }
 
     h3 {
-        font-size: 2.0em;
+        font-size: 1.9em;
     }
 
     p {
-        font-size: 1.6em;
+        font-size: 1.55em;
     }
 
     /* css for index page */
@@ -463,4 +514,8 @@ h1 {
         font-size: 2.3em;
     }
 
+    /* css for cart page */
+    .itemCartImage {
+        width: 260px;
+    }
 }

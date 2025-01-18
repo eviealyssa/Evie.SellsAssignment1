@@ -5,13 +5,14 @@ Reg No. 21255921
 Email: EASells@uclan.ac.uk 
 -->
 
-
+<!-- ACCESSIBILITY - declare the language -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- link to the stylesheets -->
-    <link rel="stylesheet" href="navAttemptstyle.css" type= "text/css">
+    <link rel="stylesheet" href="styling/style.css" type= "text/css">
+    <link rel="stylesheet" href="styling/headFootStyle.css" type= "text/css">    
 
     <!-- setting up project -->
     <meta charset="UTF-8">
@@ -19,20 +20,21 @@ Email: EASells@uclan.ac.uk
     <title>Evie Sells - UCLan Shop</title>
 </head>
 
-<body >
+<body>
     <header> 
-        <!-- Semantic Element
+        <!-- Semantic Elements - ACCESSIBILITY
          Semantic elements clearly states what the content is, they are used to clearly define the parts of the web page.
          For example header and nav. These tell both the browser and developer exactly what that section is for.        
         -->
 
          <!-- navigation bar -->
         <nav>
-             <!-- adding in logo -->
+             <!-- adding in logo - alternative text = - ACCESSIBILITY -->
             <div class="logo">
                 <img src="resources/images/logo.svg" alt="UCLan logo" height="65" >
             </div>
 
+            <!-- tablet and laptop navigation links - clear links = ACCESSIBILITY-->
             <div id="navSection">
                 <ul class="navLinksList">
                     <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
@@ -56,9 +58,79 @@ Email: EASells@uclan.ac.uk
             </div>           
         </nav>
 
+        <!-- header - title -->
         <h1>Welcome to UCLan's Student Union Shop</h1>
         
     </header>
+
+    <main> <!-- Clearly defines which is the main part of the web page  -->
+        <div class="breakPoint"></div> <!-- adds a space to the page to break things up   -->
+
+        <article> <!-- This section provides an introduction to the website -->
+            <h2 class="h2Title">Shop Now!</h2>
+            <p id="homeText">
+                Browse UCLan's official branded merchandise.
+                <br>
+                Elevate your looks with branded apparel, crafted for comfort and style.
+            </p>
+        </article>
+        
+        <div class="breakPoint"></div>
+        
+        <!-- title  -->
+        <h2 class="h2Title">Discover UCLan</h2>
+
+        <!-- section 1 - displays mp4 and text taken from the following page https://www.uclan.ac.uk/open-days -->
+        <section id="homeSection1">
+            <!-- alternative text (title) in case it doesn't load - ACCESSIBILITY -->
+            <div class="homeSection1VideoContainer ">
+                <iframe id="welcomeVideoMp4" width="40" height="320" allowfullscreen title="Video About UCLan"
+                    src= 'resources/video/video.mp4'>
+                </iframe>
+            </div>
+            
+            <div id="homeSection1Text">
+                <!-- use of headings - ACCESSIBILITY -->
+                <h2>Discover your passion</h2>
+                <h3>Attend an open day </h3>
+                <p>An Open Day gives you the chance to visit a campus in person. You can get a feel for the place and meet current students and staff. 
+                    It's the perfect way to get a taste of university life.
+                    <br>
+                    <a href="https://www.uclan.ac.uk/open-days" target="_blank" >Register now</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="breakPoint"></div>
+
+        <!-- section 2 - displays youTube video and a brief description, taken from the videos description -->
+        <section id="homeSection2">
+            <!-- use of headings - ACCESSIBILITY -->
+            <div id="homeSection2Text">
+                <h2>About Preston</h2>
+                <h3>Discover your new home</h3>
+                <p>Hidden gems, the natural beauty of the great outdoors, vibrant nightlife and foodie culture. 
+                    Whatever you’re looking for, it’s all waiting for you here in Preston.
+                    <br>
+                    <a href="https://www.uclan.ac.uk/campuses/preston" target="_blank" >Find Out More</a>
+                </p>
+            </div>
+
+            <div class="homeSection2VideoContainer ">
+                <!-- alternative text (title) in case it doesn't load - ACCESSIBILITY -->
+                <iframe id="welcomeVideoYT" width="70" height="320" allowfullscreen title="About Preston Campus"
+                    src="https://youtube.com/embed/EI_lco-qdw8">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- 
+        Section - 
+        -->
+
+        <div class="breakPoint"></div>
+
+    </main>
 
     <!-- Footer - splits into a reactive grid -->
     <footer>
@@ -113,7 +185,6 @@ Email: EASells@uclan.ac.uk
     </footer>
 
 
-
 <!-- script - JS -->
     <script>
         // Open / Close hamburger navigation function
@@ -131,33 +202,9 @@ Email: EASells@uclan.ac.uk
             }
         }
 
+        //sets scroll height to 0 -- for products page
+        sessionStorage.setItem("scrollHeightPP", 0);
 
     </script>
 </body>
 </html>
-
-<!-- 
-
-<nav class="navBar">
-
-    <div class="logo">
-        <img src="resources/images/logo.svg" alt="UCLan logo" height="65" >
-    </div>
-
-
-    <a class="mobileMenuIcon splitNav" onclick="openHamburgerNav()"><img src="resources/images/other/hamburger-menu-icon.svg" alt="Menu" height="40"></a>
-
-   
-    <ul class="navList">
-        <li class="navLinks activePage"><a href="index.html" target="_self">Home</a></li>
-        <li class="navLinks"><a href="products.html" target="_self" >Products</a></li>
-        <li class="navLinks cartText"><a href="cart.html" target="_self" >Cart</a></li> 
-    </ul>
-
-   
-    <a href="cart.html" class="splitNav cartIcon"><img src="resources/images/other/shopping-cart-image.svg" alt="Cart" height="40"></a>
-</nav>
-
-
-
--->

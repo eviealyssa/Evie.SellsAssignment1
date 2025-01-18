@@ -10,12 +10,12 @@ Email: EASells@uclan.ac.uk
 
 <head>
     <!-- link to the stylesheet -->
-    <link rel="stylesheet" href="style.css" type= "text/css">
+    <link rel="stylesheet" href="styling/style.css" type= "text/css">
 
-    <link rel="stylesheet" href="headFootStyle.css" type= "text/css">
+    <link rel="stylesheet" href="styling/headFootStyle.css" type= "text/css">
 
     <!-- embed products array into file -->
-    <script src="./resources/product-array.js"></script>
+    <script src="resources/product-array.js"></script>
 
     <!-- setting up project -->
     <meta charset="UTF-8">
@@ -38,9 +38,10 @@ Email: EASells@uclan.ac.uk
                 <img src="resources/images/logo.svg" alt="UCLan logo" height="65" >
             </div>
 
+            <!-- tablet and desktop navigation links -->
             <div id="navSection">
                 <ul class="navLinksList">
-                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
+                    <li><a href="index.html" target="_self" class="navLinks">Home</a></li>
                     <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
                 </ul>
             </div>
@@ -54,7 +55,7 @@ Email: EASells@uclan.ac.uk
             <!-- mobile navigation links -->
             <div id="mobileNavSection">
                 <ul class="mobileNavLinksList">
-                    <li><a href="index.html" target="_self" class="navLinks activePage">Home</a></li>
+                    <li><a href="index.html" target="_self" class="navLinks">Home</a></li>
                     <li><a href="products.html" target="_self" class="navLinks">Products</a></li>
                     <li><a href="cart.html" target="_self" class="navLinks">Cart</a></li> 
                 </ul>
@@ -63,19 +64,25 @@ Email: EASells@uclan.ac.uk
     </header>
 
     <!-- Main -->
-    <button id="backToPageBtn" onclick="backToPage()">Back</button>
 
+    <!-- button,  when clicked open function which returns to the project page -->
+    <button id="backToPageBtn" onclick="backToPage()">Back</button> 
+
+    <!-- container for item information -->
     <section class="itemPageContainer">
         <h1 id="nameProduct">Name</h1>
-        <img id="imageProduct" src='' alt="Product Image" width="40%">
+        <img id="imageProduct" src='temp' alt="Product Image" width="350">
         <h2 id="priceProduct">price</h2>
         <h2 id="colourText">Colour: </h2><h2 id="colourProduct">product colour</h2>
         <p id="descProduct">description of product</p>
+        <div class="breakPoint"></div>
         <button class="addToBagBtn" onclick="addToCartFromItem(this)">Add to Cart</button>
     </section>
 
     <!-- fills out the page -->
     <div id="fillerBox"></div>
+
+
     <!-- Footer -->
     <footer>
         <div class="contactInfo">
@@ -147,11 +154,13 @@ Email: EASells@uclan.ac.uk
         }
 
 
-        //add to bag
+        //adds item to bag
         function addToCartFromItem(elm)
         {
+            // gets ID of item
             var ID = sessionStorage.getItem("itemToView");
 
+            // gets  items salready stored in the cart
             var cartList = [];
             cartList = localStorage.getItem("shoppingBag");
 
@@ -177,7 +186,7 @@ Email: EASells@uclan.ac.uk
             //get id from session storage
             var productID = sessionStorage.getItem("itemToView");
 
-            //find what type the ID is
+            //find what product type the ID is
             var productArray;
             var firstLetter = productID[0];
             if (firstLetter == 't')
@@ -193,13 +202,13 @@ Email: EASells@uclan.ac.uk
                 productArray = jumpers;
             }
 
-            //find the ID
+            //find the ID number
             var dIndex = productID.indexOf("D");
             var length = productID.length;
             //get the ID by creating a substring
             var idNum = productID.substring(dIndex+1,length);
 
-            //get the details of the id
+            //get the details of the product with the correlaating id number
             var itemDetails = productArray[idNum];
 
             //populate id's with values
@@ -226,45 +235,34 @@ Email: EASells@uclan.ac.uk
             var pageSize = window.innerHeight;
 
             // gets header height
-            var headHeight= 0;
-            const headerHeight = document.getElementsByClassName("topNavBar");
-            for (let i = 0; i < headerHeight.length; i++) {
-                let temp = headerHeight[i].offsetHeight;
-                headHeight = headHeight + temp;
-            }
-            console.log("headHeight size = ", headHeight, "px");
+            var headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
 
             // gets content height
-            var contentHeight= 0;
-            const itemContainer = document.getElementsByClassName("itemPageContainer");
-            for (let i = 0; i < itemContainer.length; i++) {
-                let temp = itemContainer[i].offsetHeight;
-                contentHeight = contentHeight + temp;
-            }
-            console.log("contentHeight size = ", contentHeight, "px");
+            var contentHeight = document.getElementsByClassName("itemPageContainer")[0].offsetHeight;
 
             // gets footer height
             var footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
-            console.log("footer size = ", footerHeight, "px");
 
             // calcualtes what needs to be subtracted from the page
-            var toTake = contentHeight + footerHeight + headHeight;
-            console.log("toTake size = ", toTake);
+            var toTake = contentHeight + footerHeight + headerHeight;
 
             // calculate the height that filler box needs to be
             var fillerBoxSize = pageSize - toTake;
 
             // if filler box size is greater than 0, set it to that size
-            if (fillerBoxSize > 0){
-                console.log("filler box size = ", fillerBoxSize, "px");
+            if (fillerBoxSize > 0)
+            {
                 document.getElementById("fillerBox").style.height = fillerBoxSize + "px";
             }
-            console.log("");
+            else
+            {
+                document.getElementById("fillerBox").style.height = "0px";
+            }
         }
     
         // main -- calls functions
         addItemDetails();
-        changeFillerSize();  //ensures footer is always at the bottom of the page
+        changeFillerSize();  //ensures footer is always at the very bottom of the page
     </script>
 </body>
 </html>
