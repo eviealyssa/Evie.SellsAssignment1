@@ -97,7 +97,7 @@ Email: EASells@uclan.ac.uk
         <!-- displays the total of the basket -->
         <button id="totalPrice" onclick="payForCart()">Total: ££££</button>
 
-        <!-- displays if teh bag is empty -->
+        <!-- displays if the bag is empty -->
         <section id="bagEmpty">
             <h2 class="h2Title">Bag is empty</h2>
             <div class="breakPoint"></div>
@@ -481,7 +481,7 @@ Email: EASells@uclan.ac.uk
 
             var toTake = footerHeight + headerHeight + itemContainer + bagText + totalPrice + breakHeight;
 
-            var fillerBoxSize = pageSize - toTake;
+            var fillerBoxSize = (pageSize - toTake);
 
             if (toTake > 0){
                 document.getElementById("fillerBox").style.height = fillerBoxSize + "px";
